@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+C:\Users\lucia\OneDrive\Escritorio\proiektua\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+2399469874.index
+644074407.index
