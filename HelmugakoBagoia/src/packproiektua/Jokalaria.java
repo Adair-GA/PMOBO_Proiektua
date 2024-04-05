@@ -13,5 +13,16 @@ public class Jokalaria {
 		this.izena = Teklatua.getIzena();
 		this.pos = 1;
 	}
-
+	
+	public void aukeratuBidea(int pBideMax)
+	{
+		this.pos = Teklatua.aukeratuBidea(pBideMax);
+	}
+	
+	public int getPosizioa()
+	{
+		return this.pos;
+	}
+	
+	
 }
