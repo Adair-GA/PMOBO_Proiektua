@@ -4,20 +4,40 @@ import java.util.Scanner;
 
 public class Teklatua {
 	
-	static Scanner scanner = new Scanner(System.in);
+	private static Teklatua nireTeklatua = new Teklatua();
+	private Scanner scanner;
 	
-	public static String getIzena() {
-		String izena;
-		System.out.println("Idatzi zure izena: ");
-		izena = scanner.nextLine();
-		return izena;
+	private Teklatua()
+	{
+		scanner = new Scanner(System.in);
 	}
 	
-	public static int aukeratuBidea(int pBideMax)
+	public static Teklatua getTeklatua()
 	{
-		
-		System.out.println("aukeratu zure bidea 1-etik " + pBideMax + "-era: ");
-		return scanner.nextInt();
+		return nireTeklatua;
+	}
+	
+	public String getIzena() 
+	{
+		System.out.println("Idatzi zure izena: ");
+		return scanner.nextLine();
+	}
+	
+	public int aukeratuBidea(int pBideMax)
+	{
+		System.out.println("aukeratu zure bidea 1-etik " + pBideMax + "-era: \n");
+		while(!scanner.hasNextInt())
+		{
+			scanner.next();
+			System.out.println("Sartu zenbaki bat mesedez: \n");
+		}
+		int bidea = scanner.nextInt();
+		while(bidea < 1 || bidea > pBideMax)
+		{
+			System.out.println("Ez da existitzen aukeratu duzun bidea, mesedez beste zenbaki bat sartu: \n");
+			bidea = scanner.nextInt();
+		}
+		return bidea;
 	}
 
 }

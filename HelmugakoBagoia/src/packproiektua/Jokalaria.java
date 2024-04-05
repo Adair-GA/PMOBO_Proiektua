@@ -10,13 +10,13 @@ public class Jokalaria {
 	
 	public Jokalaria() 
 	{
-		this.izena = Teklatua.getIzena();
+		this.izena = Teklatua.getTeklatua().getIzena();
 		this.pos = 1;
 	}
 	
 	public void aukeratuBidea(int pBideMax)
 	{
-		this.pos = Teklatua.aukeratuBidea(pBideMax);
+		this.pos = Teklatua.getTeklatua().aukeratuBidea(pBideMax);
 	}
 	
 	public int getPosizioa()

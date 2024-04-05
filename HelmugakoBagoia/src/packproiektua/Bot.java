@@ -5,15 +5,16 @@ import java.util.Random;
 public class Bot extends Jokalaria {
 	
 	private static final String[] izenak = { "Apollo", "DuoLingo", "Hammer", "Golem", "Botfather", "Cosmic", "Silver"};
+	private final Random r = new Random();
+	
 	public Bot()
 	{
-		super();
+		this.pos = 1;
 		izenaEsleitu();
 	}
 	
 	private void izenaEsleitu()
 	{
-		Random r = new Random();
 		int randomIndex = r.nextInt(izenak.length);
 		this.izena = izenak[randomIndex];
 	}
@@ -21,7 +22,6 @@ public class Bot extends Jokalaria {
 	@Override
 	public void aukeratuBidea(int pBideMax)
 	{
-		Random r = new Random();
 		this.pos = 1 + r.nextInt(pBideMax);
 	}
 }
