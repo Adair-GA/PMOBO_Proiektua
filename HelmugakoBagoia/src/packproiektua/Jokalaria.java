@@ -3,8 +3,8 @@ package packproiektua;
 public class Jokalaria {
 	
 	//atributuak
-	private String izena;
-	private int pos;
+	protected String izena;
+	protected int pos;
 	
 	//eraikitzailea
 	
@@ -23,6 +23,4 @@ public class Jokalaria {
 	{
 		return this.pos;
 	}
-	
-	
 }
