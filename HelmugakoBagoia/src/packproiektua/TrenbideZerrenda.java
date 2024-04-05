@@ -25,13 +25,22 @@ public class TrenbideZerrenda {
 		return this.lista.iterator();
 	}
 	
-//	public TrenbideZatia zatiaLortu() 
-//	{
-//		Iterator <TrenbideZatia> itr=this.getIteradorea();
-//		while(itr.hasNext()) 
-//		{
-//			TrenbideZatia zati=itr.next();
-//			return zati;
-//		}
-//	}
+	public void jokatu(int pos, int txanda)
+	{
+		//algoritmoa egin jokalariak galtzeko edo dirua lortzeko
+		TrenbideZatia zati = zatiaLortu(txanda);
+	}
+	public TrenbideZatia zatiaLortu(int txanda) 
+	{
+		Iterator <TrenbideZatia> itr=this.getIteradorea();
+		TrenbideZatia zati = null;
+		int i = 0;
+		
+		while(itr.hasNext() && i < txanda) 
+		{
+			zati=itr.next();
+			i++;
+		}
+		return zati;
+	}
 }
