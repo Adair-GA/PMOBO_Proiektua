@@ -12,5 +12,12 @@ public class Teklatua {
 		izena = scanner.nextLine();
 		return izena;
 	}
+	
+	public static int aukeratuBidea(int pBideMax)
+	{
+		
+		System.out.println("aukeratu zure bidea 1-etik " + pBideMax + "-era: ");
+		return scanner.nextInt();
+	}
 
 }

@@ -21,10 +21,10 @@ public class JokalariZerrenda {
 		return nireJokalariZerrenda;
 	}
 	
-	public Jokalaria jokalariaSortu()
+	public void jokalariaSortu()
 	{
-		Jokalaria jk;
-		jk = new Jokalaria()
+		Jokalaria jk = new Jokalaria();
+		this.lista.add(jk);
 	}
 	
 }
