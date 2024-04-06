@@ -9,8 +9,10 @@ public class Bot extends Jokalaria {
 	
 	public Bot()
 	{
-		this.pos = 1;
 		izenaEsleitu();
+		this.pos = 1;
+		this.txanponak = 0;
+		this.galdu = false;
 	}
 	
 	private void izenaEsleitu()

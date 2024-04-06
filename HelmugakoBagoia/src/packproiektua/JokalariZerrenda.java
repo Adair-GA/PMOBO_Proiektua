@@ -49,6 +49,26 @@ public class JokalariZerrenda {
 				int posi = jk.getPosizioa();
 				TrenbideZerrenda.getTrenbideZerrenda().jokatu(posi, txanda);
 			}
+			TrenbideZerrenda.getTrenbideZerrenda().inprimatuZatia(txanda);
+			ezabatuJokalariak();
+			txanda ++;
+		}
+		System.out.println("Irabazlea "+ this.lista.get(0)+" da. ZORIONAK!!");
+	}
+	
+	private void ezabatuJokalariak()
+	{
+		System.out.println("Txanda honetan hurrengo jokalariak galdu dute: ");
+		Iterator<Jokalaria>itr = getIteradorea();
+		
+		while(itr.hasNext())
+		{
+			Jokalaria jk = itr.next();
+			if(jk.galdu == true)
+			{
+				System.out.println("--> "+ jk.izena);
+				itr.remove();
+			}
 		}
 	}
 	

@@ -6,6 +6,7 @@ public class Jokalaria {
 	protected String izena;
 	protected int pos;
 	protected int txanponak;
+	protected boolean galdu;
 	
 	//eraikitzailea
 	
@@ -14,6 +15,7 @@ public class Jokalaria {
 		this.izena = Teklatua.getTeklatua().getIzena();
 		this.pos = 1;
 		this.txanponak = 0;
+		this.galdu = false;
 	}
 	
 	public void aukeratuBidea(int pBideMax)

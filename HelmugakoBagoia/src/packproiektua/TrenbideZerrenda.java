@@ -29,7 +29,16 @@ public class TrenbideZerrenda {
 	{
 		//algoritmoa egin jokalariak galtzeko edo dirua lortzeko
 		TrenbideZatia zati = zatiaLortu(txanda);
+		
 	}
+	
+	public void inprimatuZatia(int txanda)
+	{
+		TrenbideZatia tz;
+		tz = zatiaLortu(txanda);
+		Inprimatzailea.inprimatu();
+	}
+	
 	public TrenbideZatia zatiaLortu(int txanda) 
 	{
 		Iterator <TrenbideZatia> itr=this.getIteradorea();
