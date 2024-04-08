@@ -33,24 +33,37 @@ public class JokalariZerrenda {
 		this.lista.add(jk);
 	}
 	
-	public void jokatu()
+	//Trenbidea jokoa aurrera joan ahala sortzen da:
+	
+	public void jokatu(int pZatiKop)
 	{
-		int txanda = 1;
+		int txanda = 1, aukera;
+		Iterator<Jokalaria>itr;
+		
 		while(this.lista.size() > 1)
 		{
-			System.out.println(txanda +". txanda.");
+			System.out.println(txanda +". txanda");
 			
-			Iterator<Jokalaria>itr = getIteradorea();
-			
+			TrenbideBat tb = new TrenbideBat();
+			tb.inprimatuZatia();
+			TrenbideAsko ta = new TrenbideAsko(pZatiKop);
+			itr = getIteradorea();
 			while(itr.hasNext())
 			{
 				Jokalaria jk = itr.next();
-				jk.aukeratuBidea(3);
-				int posi = jk.getPosizioa();
-				TrenbideZerrenda.getTrenbideZerrenda().jokatu(posi, txanda);
+				System.out.println(jk.izena + " zure txanda da, aukeratu zure bidea 1-etik " + pZatiKop + "-era: ");
+				aukera = jk.aukeratuBidea(pZatiKop);
+				if(ta.oztopoaDago(aukera))
+				{
+					jk.galdu = true;
+				}
+				if(ta.txanponaDago(aukera))
+				{
+					jk.txanponak += ta.getTxanpona(aukera);
+				}
 			}
-			TrenbideZerrenda.getTrenbideZerrenda().inprimatuZatia(txanda);
-			ezabatuJokalariak();
+			ta.inprimatuZatia();
+			this.ezabatuJokalariak();
 			txanda ++;
 		}
 		System.out.println("Irabazlea "+ this.lista.get(0)+" da. ZORIONAK!!");
@@ -71,5 +84,47 @@ public class JokalariZerrenda {
 			}
 		}
 	}
+	
+	//Trenbidea jokoaren hasiera sortuta:
+	/*public void jokatu()
+	{
+		int txanda = 1, pos = 0;
+		Iterator<Jokalaria>itr;
+		TrenbideZerrenda tz = TrenbideZerrenda.getTrenbideZerrenda();
+		if(tz.zatiaLortu(pos) instanceof TrenbideBat)
+		{
+			tz.inprimatuZatia(pos);
+			System.out.println("Jarraitzen duten jokalariak hurrengoak dira: ");
+			itr = getIteradorea();
+			while(itr.hasNext())
+			{
+				Jokalaria jk = itr.next();
+				System.out.println("--> " + jk.izena);
+			}
+			pos ++;
+		}
+		else 
+		{
+			while(this.lista.size() > 1)
+			{
+				System.out.println(txanda +". txanda.");
+				
+				itr = getIteradorea();
+				
+				while(itr.hasNext())
+				{
+					Jokalaria jk = itr.next();
+					jk.aukeratuBidea(3);
+					int aukera = jk.getPosizioa();
+					tz.jokatu(aukera, pos);
+				}
+				tz.inprimatuZatia(pos);
+				ezabatuJokalariak();
+				txanda ++;
+				pos++;
+			}
+		}
+		System.out.println("Irabazlea "+ this.lista.get(0)+" da. ZORIONAK!!");
+	}*/
 	
 }

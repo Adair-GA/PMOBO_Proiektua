@@ -2,6 +2,16 @@ package packproiektua;
 
 public class Inprimatzailea {
 	
+	public static void inprimatuBat()
+	{
+		int i = 0;
+		while(i < 5)
+		{
+			System.out.println("........      |-|      .......");
+			i++;
+		}
+	}
+	
 	public void inprimatu(int pZatiKop, int pOzt)
 	{
 		int i = 0;
@@ -22,6 +32,12 @@ public class Inprimatzailea {
 			System.out.print("\n");
 			i++;
 		}
+	}
+
+	public static void inprimatuAsko() 
+	{
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -18,9 +18,9 @@ public class Jokalaria {
 		this.galdu = false;
 	}
 	
-	public void aukeratuBidea(int pBideMax)
+	public int aukeratuBidea(int pBideMax)
 	{
-		this.pos = Teklatua.getTeklatua().aukeratuBidea(pBideMax);
+		return this.pos = Teklatua.getTeklatua().aukeratuBidea(pBideMax);
 	}
 	
 	public int getPosizioa()

@@ -15,7 +15,8 @@ public class TrenbideZerrenda {
 		this.lista = new ArrayList<TrenbideZatia>();
 	}
 	
-	public static TrenbideZerrenda getTrenbideZerrenda() {
+	public static TrenbideZerrenda getTrenbideZerrenda() 
+	{
 		if (nireTrenbideZerrenda==null) {
 			nireTrenbideZerrenda=new TrenbideZerrenda();}
 		return nireTrenbideZerrenda;
@@ -32,11 +33,11 @@ public class TrenbideZerrenda {
 		
 	}
 	
-	public void inprimatuZatia(int txanda)
+	public void inprimatuZatia(int pPos)
 	{
 		TrenbideZatia tz;
-		tz = zatiaLortu(txanda);
-		Inprimatzailea.inprimatu();
+		tz = zatiaLortu(pPos);
+		tz.inprimatuZatia();
 	}
 	
 	public TrenbideZatia zatiaLortu(int txanda) 

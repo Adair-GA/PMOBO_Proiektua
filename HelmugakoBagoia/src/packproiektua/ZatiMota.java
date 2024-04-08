@@ -1,5 +1,6 @@
 package packproiektua;
 
-public class ZatiMota {
+public class ZatiMota 
+{
 
 }

@@ -1,5 +1,6 @@
 package packproiektua;
 
-public class TrenbideZatia {
-
+public abstract class TrenbideZatia 
+{
+	public abstract void inprimatuZatia();
 }

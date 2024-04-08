@@ -1,5 +1,6 @@
 package packproiektua;
 
-public class Oztopoa {
-
+public class Oztopoa extends ZatiMota
+{
+	
 }
