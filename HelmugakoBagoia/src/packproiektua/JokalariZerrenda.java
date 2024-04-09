@@ -33,6 +33,12 @@ public class JokalariZerrenda {
 		this.lista.add(jk);
 	}
 	
+	public void botaSortu()
+	{
+		Bot bt = new Bot();
+		this.lista.add(bt);
+	}
+	
 	//Trenbidea jokoa aurrera joan ahala sortzen da:
 	
 	public void jokatu(int pZatiKop)
@@ -51,22 +57,37 @@ public class JokalariZerrenda {
 			while(itr.hasNext())
 			{
 				Jokalaria jk = itr.next();
-				System.out.println(jk.izena + " zure txanda da, aukeratu zure bidea 1-etik " + pZatiKop + "-era: ");
+				System.out.println("\n"+jk.izena + " zure txanda da, aukeratu zure bidea 1-etik " + pZatiKop + "-era: ");
 				aukera = jk.aukeratuBidea(pZatiKop);
-				if(ta.oztopoaDago(aukera))
+				if(ta.oztopoaDago() == aukera)
 				{
 					jk.galdu = true;
 				}
-				if(ta.txanponaDago(aukera))
+				if(ta.txanponaDago() == aukera)
 				{
 					jk.txanponak += ta.getTxanpona(aukera);
 				}
 			}
-			ta.inprimatuZatia();
+			ta.inprimatuZatia(pZatiKop, ta.oztopoaDago(), ta.txanponaDago());
+			this.inprimatuTxanponak();
 			this.ezabatuJokalariak();
 			txanda ++;
 		}
-		System.out.println("Irabazlea "+ this.lista.get(0)+" da. ZORIONAK!!");
+		System.out.println("Irabazlea "+ this.lista.get(0).izena +" da.");
+		System.out.print("         ,----,                                                                     \r\n"
+				+ "       .'   .`|                                                                ,-.  \r\n"
+				+ "    .'   .'   ;                   ,--,                                     ,--/ /|  \r\n"
+				+ "  ,---, '    .' ,---.    __  ,-.,--.'|    ,---.        ,---,             ,--. :/ |  \r\n"
+				+ "  |   :     ./ '   ,'\\ ,' ,'/ /||  |,    '   ,'\\   ,-+-. /  |            :  : ' /   \r\n"
+				+ "  ;   | .'  / /   /   |'  | |' |`--'_   /   /   | ,--.'|'   |  ,--.--.   |  '  /    \r\n"
+				+ "  `---' /  ; .   ; ,. :|  |   ,',' ,'| .   ; ,. :|   |  ,\"' | /       \\  '  |  :    \r\n"
+				+ "    /  ;  /  '   | |: :'  :  /  '  | | '   | |: :|   | /  | |.--.  .-. | |  |   \\   \r\n"
+				+ "   ;  /  /--,'   | .; :|  | '   |  | : '   | .; :|   | |  | | \\__\\/: . . '  : |. \\  \r\n"
+				+ "  /  /  / .`||   :    |;  : |   '  : |_|   :    ||   | |  |/  ,\" .--.; | |  | ' \\ \\ \r\n"
+				+ "./__;       : \\   \\  / |  , ;   |  | '.'\\   \\  / |   | |--'  /  /  ,.  | '  : |--'  \r\n"
+				+ "|   :     .'   `----'   ---'    ;  :    ;`----'  |   |/     ;  :   .'   \\;  |,'     \r\n"
+				+ ";   |  .'                       |  ,   /         '---'      |  ,     .-./'--'       \r\n"
+				+ "`---'                            ---`-'                      `--`---'               ");
 	}
 	
 	private void ezabatuJokalariak()
@@ -82,6 +103,18 @@ public class JokalariZerrenda {
 				System.out.println("--> "+ jk.izena);
 				itr.remove();
 			}
+		}
+	}
+	
+	private void inprimatuTxanponak()
+	{
+		System.out.println("\n\nWallet: ");
+		Iterator<Jokalaria>itr = getIteradorea();
+		
+		while(itr.hasNext())
+		{
+			Jokalaria jk = itr.next();
+			System.out.println(jk.izena +": "+jk.txanponak + " €");
 		}
 	}
 	

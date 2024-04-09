@@ -25,7 +25,6 @@ public class Teklatua {
 	
 	public int aukeratuBidea(int pBideMax)
 	{
-		System.out.println("aukeratu zure bidea 1-etik " + pBideMax + "-era: \n");
 		while(!scanner.hasNextInt())
 		{
 			scanner.next();

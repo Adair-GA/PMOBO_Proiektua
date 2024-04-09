@@ -11,33 +11,28 @@ public class Inprimatzailea {
 			i++;
 		}
 	}
-	
-	public void inprimatu(int pZatiKop, int pOzt)
-	{
-		int i = 0;
-		int j = 0;
-		int ozt = pOzt;
-		
-		while(i < 5)
-		{
-			while(j < pZatiKop)
-			{
-				if(i == 0 && j == pOzt)
-				{
-					System.out.print("|||| ");
-				}
-				System.out.print("|-|  ");
-				j++;
-			}
-			System.out.print("\n");
-			i++;
-		}
-	}
 
-	public static void inprimatuAsko() 
+
+	public static void inprimatuAsko(int pZatiKop, int pOzt, int pTxan) 
 	{
 		// TODO Auto-generated method stub
-		
+		int i = 1;
+		while (i <= pZatiKop)
+		{
+			if(i == pOzt)
+			{
+				System.out.print(" --- ");
+			}
+			else if(i == pTxan)
+			{
+				System.out.print(" o ");
+			}
+			else
+			{
+				System.out.print(" |-| ");
+			}
+			i++;
+		}
 	}
 
 }

@@ -26,12 +26,6 @@ public class TrenbideZerrenda {
 		return this.lista.iterator();
 	}
 	
-	public void jokatu(int pos, int txanda)
-	{
-		//algoritmoa egin jokalariak galtzeko edo dirua lortzeko
-		TrenbideZatia zati = zatiaLortu(txanda);
-		
-	}
 	
 	public void inprimatuZatia(int pPos)
 	{

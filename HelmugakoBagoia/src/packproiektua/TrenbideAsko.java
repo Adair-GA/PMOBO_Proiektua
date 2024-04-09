@@ -11,11 +11,17 @@ public class TrenbideAsko extends TrenbideZatia
 	
 	public TrenbideAsko(int zatiKop)
 	{
+		this.lista = new ArrayList<ZatiMota>();
+		
 		int i = 1;
-		int randomOztPos = r.nextInt(zatiKop);//oztopoaren posizioa
-		int randomDiruaPos = r.nextInt(zatiKop);//txanponaren posizioa
-		int randomDiruaBalioa = r.nextInt(5);//txanponaren balioa 1-5era
-		while(i <= zatiKop)
+		int randomOztPos = 1 + r.nextInt(zatiKop);//oztopoaren posizioa
+		int randomDiruaPos = 1 + r.nextInt(zatiKop);//txanponaren posizioa
+		while(randomDiruaPos == randomOztPos)
+		{
+			randomDiruaPos = 1 + r.nextInt(zatiKop);
+		}
+		int randomDiruaBalioa = 1 + r.nextInt(5);//txanponaren balioa 1-5era
+		while(i < zatiKop)
 		{
 			if(i == randomOztPos)
 			{
@@ -32,6 +38,7 @@ public class TrenbideAsko extends TrenbideZatia
 				ZatiMota zm = new ZatiMota();
 				this.lista.add(zm);
 			}
+			i++;
 		}
 	}
 	
@@ -40,60 +47,70 @@ public class TrenbideAsko extends TrenbideZatia
 		return this.lista.iterator();
 	}
 	
-	protected boolean oztopoaDago(int aukera)
+	protected int oztopoaDago()
 	{
 		Iterator<ZatiMota>itr = this.getIteradorea();
 		int i = 1;
 		boolean badago = false;
 		
-		while(itr.hasNext() && i < aukera)
+		while(itr.hasNext() && !badago)
 		{
+			ZatiMota zm = itr.next();
+			if(zm instanceof Oztopoa)
+			{
+				badago = true;
+			}
 			i++;
 		}
-		ZatiMota zm = itr.next();
-		if(zm instanceof Oztopoa)
-		{
-			badago = true;
-		}
-		return badago;
+		return i;
 	}
 	
-	@Override
-	public void inprimatuZatia() 
+	public void inprimatuZatia(int pZatiKop, int pOzt, int pTxan) 
 	{
 		// TODO Auto-generated method stub
-		Inprimatzailea.inprimatuAsko();
+		Inprimatzailea.inprimatuAsko(pZatiKop, pOzt, pTxan);
 	}
 
-	public boolean txanponaDago(int aukera) 
+	public int txanponaDago() 
 	{
 		Iterator<ZatiMota>itr = this.getIteradorea();
 		int i = 1;
 		boolean badago = false;
 		
-		while(itr.hasNext() && i < aukera)
+		while(itr.hasNext() && !badago)
 		{
+			ZatiMota zm = itr.next();
+			if(zm instanceof Dirua)
+			{
+				badago = true;
+			}
 			i++;
 		}
-		ZatiMota zm = itr.next();
-		if(zm instanceof Dirua)
-		{
-			badago = true;
-		}
-		return badago;
+		return i;
 	}
 
 	public int getTxanpona(int aukera) 
 	{
 		Iterator<ZatiMota>itr = this.getIteradorea();
-		int i = 1;
+		int dirua = 0;
+		boolean badago = false;
 		
-		while(itr.hasNext() && i < aukera)
+		while(itr.hasNext() && !badago)
 		{
-			i++;
+			ZatiMota zm = itr.next();
+			if(zm instanceof Dirua)
+			{
+				dirua = ((Dirua)zm).getBalioa();
+				badago = true;
+			}
 		}
-		ZatiMota zm = itr.next();
-		return ((Dirua) zm).getBalioa();
+		return dirua;
+	}
+
+	@Override
+	public void inprimatuZatia() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
