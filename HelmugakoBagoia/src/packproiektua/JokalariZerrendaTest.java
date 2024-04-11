@@ -6,12 +6,11 @@ import org.junit.jupiter.api.Test;
 
 class JokalariZerrendaTest {
 
+	@SuppressWarnings("null")
 	@Test
 	void test() {
-		JokalariZerrenda jz = JokalariZerrenda.getJokalariZerrenda();
-		jz.jokalariaSortu();
-		jz.botaSortu();
-		jz.jokatu(7);
+		HelmugakoBagoia hb = new HelmugakoBagoia();
+		hb.jokatu();
 		
 	}
 

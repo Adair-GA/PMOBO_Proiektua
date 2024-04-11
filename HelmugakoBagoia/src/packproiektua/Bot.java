@@ -9,6 +9,7 @@ public class Bot extends Jokalaria {
 	
 	public Bot()
 	{
+		this.izena = "BOT";
 		izenaEsleitu();
 		this.pos = 1;
 		this.txanponak = 0;

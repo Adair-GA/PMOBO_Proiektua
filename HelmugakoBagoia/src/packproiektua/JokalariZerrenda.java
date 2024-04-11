@@ -59,6 +59,16 @@ public class JokalariZerrenda {
 				Jokalaria jk = itr.next();
 				System.out.println("\n"+jk.izena + " zure txanda da, aukeratu zure bidea 1-etik " + pZatiKop + "-era: ");
 				aukera = jk.aukeratuBidea(pZatiKop);
+				if(jk instanceof Bot)
+				{
+					System.out.print(jk.pos + "\n");
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
 				if(ta.oztopoaDago() == aukera)
 				{
 					jk.galdu = true;
@@ -68,6 +78,8 @@ public class JokalariZerrenda {
 					jk.txanponak += ta.getTxanpona(aukera);
 				}
 			}
+			System.out.println("------------------------------------------------------\n"
+					         + "------------------------------------------------------");
 			ta.inprimatuZatia(pZatiKop, ta.oztopoaDago(), ta.txanponaDago());
 			this.inprimatuTxanponak();
 			this.ezabatuJokalariak();

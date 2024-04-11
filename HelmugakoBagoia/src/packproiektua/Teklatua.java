@@ -38,5 +38,17 @@ public class Teklatua {
 		}
 		return bidea;
 	}
+	
+	public int aukeratuInt()
+	{
+		while(!scanner.hasNextInt())
+		{
+			scanner.next();
+			System.out.println("Sartu zenbaki bat mesedez: \n");
+		}
+		int zenb = scanner.nextInt();
+		return zenb;
+	}
+	
 
 }

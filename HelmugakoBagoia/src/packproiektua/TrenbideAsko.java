@@ -14,14 +14,14 @@ public class TrenbideAsko extends TrenbideZatia
 		this.lista = new ArrayList<ZatiMota>();
 		
 		int i = 1;
-		int randomOztPos = 1 + r.nextInt(zatiKop);//oztopoaren posizioa
-		int randomDiruaPos = 1 + r.nextInt(zatiKop);//txanponaren posizioa
+		int randomOztPos = r.nextInt(zatiKop) + 1;//oztopoaren posizioa
+		int randomDiruaPos = r.nextInt(zatiKop) + 1;//txanponaren posizioa
 		while(randomDiruaPos == randomOztPos)
 		{
-			randomDiruaPos = 1 + r.nextInt(zatiKop);
+			randomDiruaPos = r.nextInt(zatiKop) + 1;
 		}
 		int randomDiruaBalioa = 1 + r.nextInt(5);//txanponaren balioa 1-5era
-		while(i < zatiKop)
+		while(i <= zatiKop)
 		{
 			if(i == randomOztPos)
 			{
