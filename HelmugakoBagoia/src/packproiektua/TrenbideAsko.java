@@ -20,14 +20,24 @@ public class TrenbideAsko extends TrenbideZatia
 		{
 			randomDiruaPos = r.nextInt(zatiKop);
 		}
-		int randomDiruaBalioa = 1 + r.nextInt(5);//txanponaren balioa 1-5era
-		System.out.println(randomDiruaBalioa);
+		int randomDiruaBalioa = 1 + r.nextInt(100);//txanponaren balioa 1-5era
+	//	System.out.println(randomDiruaBalioa);
+		//System.out.println(randomDiruaPos);
+		//System.out.println(randomOztPos);
 		while(i < zatiKop)
 		{
 			if(i == randomOztPos)
 			{
-				Oztopoa oz = new Oztopoa();
-				this.lista.add(oz);
+				if(this.lapurraDa())
+				{
+					Lapurra la = new Lapurra();
+					this.lista.add(la);
+				}
+				else
+				{
+					Oztopoa oz = new Oztopoa();
+					this.lista.add(oz);
+				}
 			}
 			else if (i == randomDiruaPos)
 			{
@@ -43,11 +53,35 @@ public class TrenbideAsko extends TrenbideZatia
 		}
 	}
 	
+	private Boolean lapurraDa()
+	{
+		boolean bada = r.nextBoolean();
+		return bada;
+	}
+	
 	private Iterator<ZatiMota> getIteradorea()
 	{
 		return this.lista.iterator();
 	}
 	
+	protected ZatiMota getZatia(int pos)
+	{
+		Iterator<ZatiMota>itr = this.getIteradorea();
+		int i = -1;
+		boolean badago = false;
+		ZatiMota zm = null;
+		
+		while(itr.hasNext() && !badago)
+		{
+			i++;
+			zm = itr.next();
+			if(zm instanceof Oztopoa)
+			{
+				badago = true;
+			}
+		}
+		return zm;
+	}
 	protected int oztopoaDago()
 	{
 		Iterator<ZatiMota>itr = this.getIteradorea();
@@ -66,10 +100,10 @@ public class TrenbideAsko extends TrenbideZatia
 		return i;
 	}
 	
-	public void inprimatuZatia(int pZatiKop, int pOzt, int pTxan) 
+	public void inprimatuZatia(int pZatiKop, int pOzt, int pTxan, boolean pLapurra) 
 	{
 		// TODO Auto-generated method stub
-		Inprimatzailea.inprimatuAsko(pZatiKop, pOzt, pTxan);
+		Inprimatzailea.inprimatuAsko(pZatiKop, pOzt, pTxan, pLapurra);
 	}
 
 	public int txanponaDago() 

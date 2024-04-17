@@ -13,7 +13,7 @@ public class Inprimatzailea {
 	}
 
 
-	public static void inprimatuAsko(int pZatiKop, int pOzt, int pTxan) 
+	public static void inprimatuAsko(int pZatiKop, int pOzt, int pTxan, boolean pLapurra) 
 	{
 		// TODO Auto-generated method stub
 		int i = 0;
@@ -21,11 +21,18 @@ public class Inprimatzailea {
 		{
 			if(i == pOzt)
 			{
-				System.out.print(" --- ");
+				if(pLapurra)
+				{
+					System.out.print(" 😈 ​");
+				}
+				else
+				{
+					System.out.print(" 🚧 ");
+				}
 			}
 			else if(i == pTxan)
 			{
-				System.out.print(" o ");
+				System.out.print(" 🪙​ ");
 			}
 			else
 			{

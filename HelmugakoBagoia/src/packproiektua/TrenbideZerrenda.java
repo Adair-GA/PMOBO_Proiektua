@@ -10,41 +10,57 @@ public class TrenbideZerrenda {
 	//eraikitzailea
 	private static TrenbideZerrenda nireTrenbideZerrenda=null;
 	
-	private TrenbideZerrenda() 
+	private TrenbideZerrenda(int txandaMax, int pZatiKop) 
 	{
 		this.lista = new ArrayList<TrenbideZatia>();
+		this.trenbideZerrendaSortu(txandaMax, pZatiKop);
 	}
 	
-	public static TrenbideZerrenda getTrenbideZerrenda() 
+	public static TrenbideZerrenda getTrenbideZerrenda(int txandaMax, int pZatiKop) 
 	{
 		if (nireTrenbideZerrenda==null) {
-			nireTrenbideZerrenda=new TrenbideZerrenda();}
+			nireTrenbideZerrenda = new TrenbideZerrenda(txandaMax, pZatiKop);}
 		return nireTrenbideZerrenda;
 	}
 	
-	private void trenbideZerrendaSortu()
+	private void trenbideZerrendaSortu(int txandaMax, int pZatiKop) //geroago jarri dezakegu nibel kopuru desberdinak
 	{
-		
+		int i = 0;
+		while(txandaMax > i)
+		{
+			this.gehituZatia(pZatiKop);
+			i++;
+		}
 	}
+	
+	private void gehituZatia(int pZatiKop)
+	{
+		int trenbideKop = pZatiKop;
+		TrenbideBat tb = new TrenbideBat();
+		TrenbideAsko ta = new TrenbideAsko(trenbideKop);
+		this.lista.add(tb);
+		this.lista.add(ta);
+	}
+	
 	private Iterator <TrenbideZatia> getIteradorea(){
 		return this.lista.iterator();
 	}
 	
 	
-	public void inprimatuZatia(int pPos)
+	/*public void inprimatuZatia(int pPos)
 	{
 		TrenbideZatia tz;
 		tz = zatiaLortu(pPos);
 		tz.inprimatuZatia();
-	}
+	}*/
 	
-	public TrenbideZatia zatiaLortu(int txanda) 
+	public TrenbideZatia zatiaLortu(int pos) 
 	{
 		Iterator <TrenbideZatia> itr=this.getIteradorea();
 		TrenbideZatia zati = null;
 		int i = 0;
 		
-		while(itr.hasNext() && i < txanda) 
+		while(itr.hasNext() && i < pos) 
 		{
 			zati=itr.next();
 			i++;

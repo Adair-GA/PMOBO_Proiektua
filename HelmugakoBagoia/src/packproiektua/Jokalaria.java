@@ -12,17 +12,17 @@ public class Jokalaria {
 	
 	public Jokalaria() 
 	{
-		//this.izena = Teklatua.getTeklatua().getIzena();
 		this.pos = 1;
 		this.txanponak = 0;
 		this.galdu = false;
+		//this.izena = this.izenaAukeratu();
 	}
 	
-	protected void aukeratuIzena()
+	public void izenaAukeratu()
 	{
 		this.izena = Teklatua.getTeklatua().getIzena();
+		
 	}
-	
 	public int aukeratuBidea(int pBideMax)
 	{
 		return this.pos = Teklatua.getTeklatua().aukeratuBidea(pBideMax);

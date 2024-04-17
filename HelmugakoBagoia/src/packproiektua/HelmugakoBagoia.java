@@ -1,10 +1,13 @@
 package packproiektua;
 
+import java.util.Scanner;
+
 public class HelmugakoBagoia 
 {
+	
 	public void jokatu()
 	{
-		int botKop = 0, joKop = 0, biaKop=0, i = 0;
+		int botKop = 0, joKop = 0, biaKop=0, i = 0, txandaMax = 0;
 		JokalariZerrenda jz = JokalariZerrenda.getJokalariZerrenda();
 		System.out.println(" __    __            __                                              __                        __                                      __           \r\n"
 				+ "/  |  /  |          /  |                                            /  |                      /  |                                    /  |          \r\n"
@@ -25,6 +28,7 @@ public class HelmugakoBagoia
 			System.out.println("Sartutako bia kopurua ez da nahikoa jolasarekin hasteko, mesedez, 3 edo gehiago aukeratu: ");
 			biaKop = Teklatua.getTeklatua().aukeratuInt();
 		}
+		txandaMax = biaKop * 2;
 		
 		System.out.print("\nAukeratu zenbat jokalari dauden: ");
 		joKop = Teklatua.getTeklatua().aukeratuInt();
@@ -36,20 +40,39 @@ public class HelmugakoBagoia
 		
 		System.out.print("\nAukeratu zenbat bot nahi dituzun: ");
 		botKop = Teklatua.getTeklatua().aukeratuInt();
+		System.out.println();
+		Teklatua.getTeklatua().getReturn();
 		
-		while(i<botKop)
-		{
-			jz.botaSortu();
-			i++;
-		}
-		i = 0;
 		while(i < joKop)
 		{
 			jz.jokalariaSortu();
 			i++;
 		}
 		
-		jz.jokatu(biaKop);
+		i = 0;
+		while(i<botKop)
+		{
+			jz.botaSortu();
+			i++;
+		}
+		
+		System.out.println("Hurrengo partidak " + txandaMax + " izangoDitu");
+		jz.jokatu(biaKop, txandaMax);
+		
+		System.out.print("         ,----,                                                                     \r\n"
+				+ "       .'   .`|                                                                ,-.  \r\n"
+				+ "    .'   .'   ;                   ,--,                                     ,--/ /|  \r\n"
+				+ "  ,---, '    .' ,---.    __  ,-.,--.'|    ,---.        ,---,             ,--. :/ |  \r\n"
+				+ "  |   :     ./ '   ,'\\ ,' ,'/ /||  |,    '   ,'\\   ,-+-. /  |            :  : ' /   \r\n"
+				+ "  ;   | .'  / /   /   |'  | |' |`--'_   /   /   | ,--.'|'   |  ,--.--.   |  '  /    \r\n"
+				+ "  `---' /  ; .   ; ,. :|  |   ,',' ,'| .   ; ,. :|   |  ,\"' | /       \\  '  |  :    \r\n"
+				+ "    /  ;  /  '   | |: :'  :  /  '  | | '   | |: :|   | /  | |.--.  .-. | |  |   \\   \r\n"
+				+ "   ;  /  /--,'   | .; :|  | '   |  | : '   | .; :|   | |  | | \\__\\/: . . '  : |. \\  \r\n"
+				+ "  /  /  / .`||   :    |;  : |   '  : |_|   :    ||   | |  |/  ,\" .--.; | |  | ' \\ \\ \r\n"
+				+ "./__;       : \\   \\  / |  , ;   |  | '.'\\   \\  / |   | |--'  /  /  ,.  | '  : |--'  \r\n"
+				+ "|   :     .'   `----'   ---'    ;  :    ;`----'  |   |/     ;  :   .'   \\;  |,'     \r\n"
+				+ ";   |  .'                       |  ,   /         '---'      |  ,     .-./'--'       \r\n"
+				+ "`---'                            ---`-'                      `--`---'               ");
 	}
 
 }

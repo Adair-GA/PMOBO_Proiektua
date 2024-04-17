@@ -17,6 +17,11 @@ public class Teklatua {
 		return nireTeklatua;
 	}
 	
+	protected void getReturn()
+	{
+		scanner.nextLine();
+	}
+	
 	public String getIzena() 
 	{
 		System.out.println("Idatzi zure izena: ");

@@ -4,16 +4,18 @@ import java.util.Random;
 
 public class Bot extends Jokalaria {
 	
-	private static final String[] izenak = { "Apollo", "DuoLingo", "Hammer", "Golem", "Botfather", "Cosmic", "Silver"};
+	private static final String[] izenak = { "Apollo", "DuoLingo", "Hammer", "Golem", "Botfather", "Cosmic", "Silver", "Nexus", "CyberByte", "Quantum", "Blitz", "Techno", "Binary", "Synth", "ByteBot", "Volt", "Spark", "ByteMaster", "Omega", "Neon", "ByteBlade", "CircuitBot"};
 	private final Random r = new Random();
 	
 	public Bot()
 	{
-		//this.izena = "BOT";
+		//super();
+		//this.izena = this.izenaAukeratu();
 		super();
+		
 	}
 	
-	protected void aukeratuIzena()
+	public void izenaAukeratu()
 	{
 		int randomIndex = r.nextInt(izenak.length);
 		this.izena = izenak[randomIndex];

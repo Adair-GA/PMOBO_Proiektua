@@ -30,88 +30,27 @@ public class JokalariZerrenda {
 	public void jokalariaSortu()
 	{
 		Jokalaria jk = new Jokalaria();
-		jk.aukeratuIzena();
+		jk.izenaAukeratu();
 		this.lista.add(jk);
 	}
 	
 	public void botaSortu()
 	{
 		Bot bt = new Bot();
-		bt.aukeratuIzena();
+		bt.izenaAukeratu();
 		this.lista.add(bt);
 	}
 	
-	//Trenbidea jokoa aurrera joan ahala sortzen da:
-	
-	public void jokatu(int pZatiKop)
-	{
-		int txanda = 1, aukera;
-		Iterator<Jokalaria>itr;
-		
-		while(this.lista.size() > 1)
-		{
-			System.out.println(txanda +". txanda");
-			
-			TrenbideBat tb = new TrenbideBat();
-			tb.inprimatuZatia();
-			TrenbideAsko ta = new TrenbideAsko(pZatiKop);
-			itr = getIteradorea();
-			while(itr.hasNext())
-			{
-				Jokalaria jk = itr.next();
-				System.out.println("\n"+jk.izena + " zure txanda da, aukeratu zure bidea 1-etik " + pZatiKop + "-era: ");
-				aukera = jk.aukeratuBidea(pZatiKop) - 1;
-				if(jk instanceof Bot)
-				{
-					System.out.print(jk.pos + "\n");
-					try {
-						Thread.sleep(1000);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}
-				if(ta.oztopoaDago() == aukera)
-				{
-					jk.galdu = true;
-				}
-				if(ta.txanponaDago() == aukera)
-				{
-					jk.txanponak += ta.getTxanpona(aukera);
-				}
-			}
-			System.out.println("------------------------------------------------------\n"
-					         + "------------------------------------------------------");
-			ta.inprimatuZatia(pZatiKop, ta.oztopoaDago(), ta.txanponaDago());
-			this.inprimatuTxanponak();
-			this.ezabatuJokalariak();
-			txanda ++;
-		}
-		System.out.println("Irabazlea "+ this.lista.get(0).izena +" da.");
-		System.out.print("         ,----,                                                                     \r\n"
-				+ "       .'   .`|                                                                ,-.  \r\n"
-				+ "    .'   .'   ;                   ,--,                                     ,--/ /|  \r\n"
-				+ "  ,---, '    .' ,---.    __  ,-.,--.'|    ,---.        ,---,             ,--. :/ |  \r\n"
-				+ "  |   :     ./ '   ,'\\ ,' ,'/ /||  |,    '   ,'\\   ,-+-. /  |            :  : ' /   \r\n"
-				+ "  ;   | .'  / /   /   |'  | |' |`--'_   /   /   | ,--.'|'   |  ,--.--.   |  '  /    \r\n"
-				+ "  `---' /  ; .   ; ,. :|  |   ,',' ,'| .   ; ,. :|   |  ,\"' | /       \\  '  |  :    \r\n"
-				+ "    /  ;  /  '   | |: :'  :  /  '  | | '   | |: :|   | /  | |.--.  .-. | |  |   \\   \r\n"
-				+ "   ;  /  /--,'   | .; :|  | '   |  | : '   | .; :|   | |  | | \\__\\/: . . '  : |. \\  \r\n"
-				+ "  /  /  / .`||   :    |;  : |   '  : |_|   :    ||   | |  |/  ,\" .--.; | |  | ' \\ \\ \r\n"
-				+ "./__;       : \\   \\  / |  , ;   |  | '.'\\   \\  / |   | |--'  /  /  ,.  | '  : |--'  \r\n"
-				+ "|   :     .'   `----'   ---'    ;  :    ;`----'  |   |/     ;  :   .'   \\;  |,'     \r\n"
-				+ ";   |  .'                       |  ,   /         '---'      |  ,     .-./'--'       \r\n"
-				+ "`---'                            ---`-'                      `--`---'               ");
-	}
 	
 	private void ezabatuJokalariak()
 	{
 		System.out.println("Txanda honetan hurrengo jokalariak galdu dute: ");
 		Iterator<Jokalaria>itr = getIteradorea();
+		Jokalaria jk = null;
 		
 		while(itr.hasNext())
 		{
-			Jokalaria jk = itr.next();
+			jk = itr.next();
 			if(jk.galdu == true)
 			{
 				System.out.println("--> "+ jk.izena);
@@ -128,50 +67,121 @@ public class JokalariZerrenda {
 		while(itr.hasNext())
 		{
 			Jokalaria jk = itr.next();
-			System.out.println(jk.izena +": "+jk.txanponak + " €");
+			System.out.println(jk.izena +": "+jk.txanponak + " 💰");
 		}
 	}
 	
-	//Trenbidea jokoaren hasiera sortuta:
-	/*public void jokatu()
+	private void norDaDirudunena()
 	{
-		int txanda = 1, pos = 0;
 		Iterator<Jokalaria>itr;
-		TrenbideZerrenda tz = TrenbideZerrenda.getTrenbideZerrenda();
-		if(tz.zatiaLortu(pos) instanceof TrenbideBat)
+		Jokalaria irabazlea = null, jk = null;
+		int txanponMax = 0, txanponak;
+		int pos = 0;
+		
+		itr = getIteradorea();
+		while (itr.hasNext())
 		{
-			tz.inprimatuZatia(pos);
-			System.out.println("Jarraitzen duten jokalariak hurrengoak dira: ");
+			jk = itr.next();
+			txanponak = this.lista.get(pos).txanponak;
+			if (txanponak > txanponMax)
+			{
+				txanponMax = this.lista.get(pos).txanponak;
+				irabazlea = jk;
+			}
+			/*else if(txanponak == txanponMax)
+			{
+				
+			}*/
+			pos ++;
+		}
+		System.out.println("Irabazlea "+ irabazlea.izena +" da.");
+	}
+	
+	//trenbidea sortuta dago
+	protected void jokatu(int pZatiKop, int txandaMax)
+	{
+		TrenbideZerrenda tz = TrenbideZerrenda.getTrenbideZerrenda(txandaMax, pZatiKop); 
+		TrenbideBat tb = null;
+		TrenbideAsko ta = null;
+		int txanda = 1, aukera, pos = 1;
+		Iterator<Jokalaria>itr;
+		
+		while(this.lista.size() > 1 && txanda <= txandaMax)
+		{
+			System.out.println(txanda +". txanda");
+			
+			tb = (TrenbideBat) tz.zatiaLortu(pos);
+			tb.inprimatuZatia();
+			pos ++;
+			ta = (TrenbideAsko) tz.zatiaLortu(pos);
+			pos ++;
 			itr = getIteradorea();
 			while(itr.hasNext())
 			{
 				Jokalaria jk = itr.next();
-				System.out.println("--> " + jk.izena);
-			}
-			pos ++;
-		}
-		else 
-		{
-			while(this.lista.size() > 1)
-			{
-				System.out.println(txanda +". txanda.");
-				
-				itr = getIteradorea();
-				
-				while(itr.hasNext())
+				System.out.println("\n"+jk.izena + " zure txanda da, aukeratu zure bidea 1-etik " + pZatiKop + "-era: ");
+				aukera = jk.aukeratuBidea(pZatiKop) - 1;
+				if(jk instanceof Bot)
 				{
-					Jokalaria jk = itr.next();
-					jk.aukeratuBidea(3);
-					int aukera = jk.getPosizioa();
-					tz.jokatu(aukera, pos);
+					System.out.print(jk.pos + "\n");
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
 				}
-				tz.inprimatuZatia(pos);
-				ezabatuJokalariak();
-				txanda ++;
-				pos++;
+				if(ta.oztopoaDago() == aukera)
+				{
+					Lapurra la = new Lapurra();
+					if(ta.getZatia(pos) instanceof Lapurra)
+					{
+						if(jk.txanponak >= la.getDiruaBalioa())
+						{
+							jk.txanponak -= la.getDiruaBalioa();
+						}
+						else
+						{
+							jk.galdu = true;
+						}
+					}
+					else
+					{
+						jk.galdu = true;
+					}
+				}
+				if(ta.txanponaDago() == aukera)
+				{
+					jk.txanponak += ta.getTxanpona(aukera);
+				}
+				/*if(jk.izena.equals("lucia"))
+				{
+					jk.txanponak += 20;
+				}*/
 			}
+			System.out.println("------------------------------------------------------\n"
+					         + "------------------------------------------------------");
+			ta.inprimatuZatia(pZatiKop, ta.oztopoaDago(), ta.txanponaDago(), ta.getZatia(pos)instanceof Lapurra);
+			this.inprimatuTxanponak();
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			this.ezabatuJokalariak();
+			txanda ++;
 		}
-		System.out.println("Irabazlea "+ this.lista.get(0)+" da. ZORIONAK!!");
-	}*/
+		
+		if (this.lista.size() > 1)
+		{
+			this.norDaDirudunena();
+		}
+		
+		else
+		{
+			Jokalaria irabazlea = null;
+			irabazlea = this.lista.get(0);
+			System.out.println("Irabazlea "+ irabazlea.izena +" da.");
+		}
+	}
 	
 }
