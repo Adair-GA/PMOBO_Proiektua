@@ -58,7 +58,7 @@ public class JokalariZerrenda {
 			{
 				Jokalaria jk = itr.next();
 				System.out.println("\n"+jk.izena + " zure txanda da, aukeratu zure bidea 1-etik " + pZatiKop + "-era: ");
-				aukera = jk.aukeratuBidea(pZatiKop);
+				aukera = jk.aukeratuBidea(pZatiKop) - 1;
 				if(jk instanceof Bot)
 				{
 					System.out.print(jk.pos + "\n");

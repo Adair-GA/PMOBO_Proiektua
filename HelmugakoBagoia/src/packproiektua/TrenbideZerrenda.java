@@ -22,6 +22,10 @@ public class TrenbideZerrenda {
 		return nireTrenbideZerrenda;
 	}
 	
+	private void trenbideZerrendaSortu()
+	{
+		
+	}
 	private Iterator <TrenbideZatia> getIteradorea(){
 		return this.lista.iterator();
 	}

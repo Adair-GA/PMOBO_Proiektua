@@ -16,8 +16,8 @@ public class Inprimatzailea {
 	public static void inprimatuAsko(int pZatiKop, int pOzt, int pTxan) 
 	{
 		// TODO Auto-generated method stub
-		int i = 1;
-		while (i <= pZatiKop)
+		int i = 0;
+		while (i < pZatiKop)
 		{
 			if(i == pOzt)
 			{

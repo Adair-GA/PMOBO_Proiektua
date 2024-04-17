@@ -13,15 +13,16 @@ public class TrenbideAsko extends TrenbideZatia
 	{
 		this.lista = new ArrayList<ZatiMota>();
 		
-		int i = 1;
-		int randomOztPos = r.nextInt(zatiKop) + 1;//oztopoaren posizioa
-		int randomDiruaPos = r.nextInt(zatiKop) + 1;//txanponaren posizioa
+		int i = 0;
+		int randomOztPos = r.nextInt(zatiKop);//oztopoaren posizioa
+		int randomDiruaPos = r.nextInt(zatiKop);//txanponaren posizioa
 		while(randomDiruaPos == randomOztPos)
 		{
-			randomDiruaPos = r.nextInt(zatiKop) + 1;
+			randomDiruaPos = r.nextInt(zatiKop);
 		}
 		int randomDiruaBalioa = 1 + r.nextInt(5);//txanponaren balioa 1-5era
-		while(i <= zatiKop)
+		System.out.println(randomDiruaBalioa);
+		while(i < zatiKop)
 		{
 			if(i == randomOztPos)
 			{
@@ -50,17 +51,17 @@ public class TrenbideAsko extends TrenbideZatia
 	protected int oztopoaDago()
 	{
 		Iterator<ZatiMota>itr = this.getIteradorea();
-		int i = 1;
+		int i = -1;
 		boolean badago = false;
 		
 		while(itr.hasNext() && !badago)
 		{
+			i++;
 			ZatiMota zm = itr.next();
 			if(zm instanceof Oztopoa)
 			{
 				badago = true;
 			}
-			i++;
 		}
 		return i;
 	}
@@ -74,17 +75,17 @@ public class TrenbideAsko extends TrenbideZatia
 	public int txanponaDago() 
 	{
 		Iterator<ZatiMota>itr = this.getIteradorea();
-		int i = 1;
+		int i = -1;
 		boolean badago = false;
 		
 		while(itr.hasNext() && !badago)
 		{
+			i++;
 			ZatiMota zm = itr.next();
 			if(zm instanceof Dirua)
 			{
 				badago = true;
 			}
-			i++;
 		}
 		return i;
 	}
