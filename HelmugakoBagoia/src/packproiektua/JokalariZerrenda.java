@@ -30,12 +30,14 @@ public class JokalariZerrenda {
 	public void jokalariaSortu()
 	{
 		Jokalaria jk = new Jokalaria();
+		jk.aukeratuIzena();
 		this.lista.add(jk);
 	}
 	
 	public void botaSortu()
 	{
 		Bot bt = new Bot();
+		bt.aukeratuIzena();
 		this.lista.add(bt);
 	}
 	

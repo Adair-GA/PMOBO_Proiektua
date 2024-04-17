@@ -12,10 +12,15 @@ public class Jokalaria {
 	
 	public Jokalaria() 
 	{
-		this.izena = Teklatua.getTeklatua().getIzena();
+		//this.izena = Teklatua.getTeklatua().getIzena();
 		this.pos = 1;
 		this.txanponak = 0;
 		this.galdu = false;
+	}
+	
+	protected void aukeratuIzena()
+	{
+		this.izena = Teklatua.getTeklatua().getIzena();
 	}
 	
 	public int aukeratuBidea(int pBideMax)
