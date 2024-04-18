@@ -8,7 +8,10 @@ class BotTest {
 
 	@Test
 	void testAukeratuBidea() {
-		fail("Not yet implemented");
+		Bot bt = new Bot();
+		int bideMax = 3;
+		int aukera = bt.aukeratuBidea(bideMax);
+		assertTrue(aukera >= 1 && aukera <= bideMax);
 	}
 
 	@Test
@@ -16,6 +19,12 @@ class BotTest {
 		Bot bt = new Bot();
 		bt.izenaAukeratu();
 		System.out.print(bt.izena);
+	}
+	
+	@Test
+	void testAukeratuIzena()
+	{
+		
 	}
 
 }
