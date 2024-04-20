@@ -3,6 +3,7 @@ package packproiektua;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+
 public class JokalariZerrenda {
 	
 	private ArrayList<Jokalaria>lista;
@@ -44,19 +45,35 @@ public class JokalariZerrenda {
 	
 	private void ezabatuJokalariak()
 	{
-		System.out.println("Txanda honetan hurrengo jokalariak galdu dute: ");
 		Iterator<Jokalaria>itr = getIteradorea();
 		Jokalaria jk = null;
+		int galdu = 0;
 		
 		while(itr.hasNext())
 		{
 			jk = itr.next();
 			if(jk.galdu == true)
 			{
-				System.out.println("--> "+ jk.izena);
-				itr.remove();
+				galdu ++;
 			}
 		}
+		
+		if(galdu >= 1)
+		{
+			System.out.println("Txanda honetan hurrengo jokalariak galdu dute: ");
+			itr = getIteradorea();
+			while(itr.hasNext())
+			{
+				jk = itr.next();
+				if(jk.galdu == true)
+				{
+					System.out.println("--> "+ jk.izena);
+					itr.remove();
+				}
+			}
+		}
+		
+		
 	}
 	
 	private void inprimatuTxanponak()
@@ -85,20 +102,17 @@ public class JokalariZerrenda {
 			txanponak = this.lista.get(pos).txanponak;
 			if (txanponak > txanponMax)
 			{
-				txanponMax = this.lista.get(pos).txanponak;
+				txanponMax = txanponak;
 				irabazlea = jk;
 			}
-			/*else if(txanponak == txanponMax)
-			{
-				
-			}*/
 			pos ++;
 		}
 		System.out.println("Irabazlea "+ irabazlea.izena +" da.");
 	}
 	
+	
 	//trenbidea sortuta dago
-	protected void jokatu(int pZatiKop, int txandaMax)
+	protected int jokatu(int pZatiKop, int txandaMax)
 	{
 		TrenbideZerrenda tz = TrenbideZerrenda.getTrenbideZerrenda(txandaMax, pZatiKop); 
 		TrenbideBat tb = null;
@@ -108,7 +122,20 @@ public class JokalariZerrenda {
 		
 		while(this.lista.size() > 1 && txanda <= txandaMax)
 		{
-			System.out.println(txanda +". txanda");
+			if(txanda < 10)
+			{
+				System.out.println("\n"+
+						"       ╔═════════════════╗"+"\n"+
+						"       ║    " + txanda +". txanda" + "    ║"+"\n"+
+						"       ╚═════════════════╝\n");
+			}
+			else
+			{
+				System.out.println("\n"+
+						"       ╔═════════════════╗"+"\n"+
+						"       ║    " + txanda +". txanda" + "   ║"+"\n"+
+						"       ╚═════════════════╝\n");	
+			}
 			
 			tb = (TrenbideBat) tz.zatiaLortu(pos);
 			tb.inprimatuZatia();
@@ -119,7 +146,7 @@ public class JokalariZerrenda {
 			while(itr.hasNext())
 			{
 				Jokalaria jk = itr.next();
-				System.out.println("\n"+jk.izena + " zure txanda da, aukeratu zure bidea 1-etik " + pZatiKop + "-era: ");
+				System.out.print("\n"+jk.izena + " zure txanda da, aukeratu zure bidea 1-etik " + pZatiKop + "-era: ");
 				aukera = jk.aukeratuBidea(pZatiKop) - 1;
 				if(jk instanceof Bot)
 				{
@@ -132,12 +159,11 @@ public class JokalariZerrenda {
 				}
 				if(ta.oztopoaDago() == aukera)
 				{
-					Lapurra la = new Lapurra();
 					if(ta.getZatia(pos) instanceof Lapurra)
 					{
-						if(jk.txanponak >= la.getDiruaBalioa())
+						if(jk.txanponak >= ((Lapurra) ta.getZatia(pos)).getDiruaBalioa())
 						{
-							jk.txanponak -= la.getDiruaBalioa();
+							jk.txanponak -= ((Lapurra) ta.getZatia(pos)).getDiruaBalioa();
 						}
 						else
 						{
@@ -153,15 +179,12 @@ public class JokalariZerrenda {
 				{
 					jk.txanponak += ta.getTxanpona(aukera);
 				}
-				/*if(jk.izena.equals("lucia"))
-				{
-					jk.txanponak += 20;
-				}*/
 			}
-			System.out.println("------------------------------------------------------\n"
-					         + "------------------------------------------------------");
+			System.out.println();
+			
 			ta.inprimatuZatia(pZatiKop, ta.oztopoaDago(), ta.txanponaDago(), ta.getZatia(pos)instanceof Lapurra);
 			this.inprimatuTxanponak();
+			
 			try {
 				Thread.sleep(2000);
 			} catch (InterruptedException e) {
@@ -174,13 +197,20 @@ public class JokalariZerrenda {
 		if (this.lista.size() > 1)
 		{
 			this.norDaDirudunena();
+			return 0;
 		}
 		
+		if(this.lista.size() == 0)
+		{
+			System.out.println("Jokalari guztiek galdu dute");
+			return 1;
+		}
 		else
 		{
 			Jokalaria irabazlea = null;
 			irabazlea = this.lista.get(0);
 			System.out.println("Irabazlea "+ irabazlea.izena +" da.");
+			return 0;
 		}
 	}
 	

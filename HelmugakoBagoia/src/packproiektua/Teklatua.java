@@ -19,7 +19,12 @@ public class Teklatua {
 	
 	protected void getReturn()
 	{
-		scanner.nextLine();
+		String input;
+		input = scanner.nextLine();
+		while(!input.equals(""))
+		{
+			input = scanner.nextLine();
+		}
 	}
 	
 	public String getIzena() 
@@ -39,7 +44,13 @@ public class Teklatua {
 		while(bidea < 1 || bidea > pBideMax)
 		{
 			System.out.println("Ez da existitzen aukeratu duzun bidea, mesedez beste zenbaki bat sartu: \n");
+			while(!scanner.hasNextInt())
+			{
+				scanner.next();
+				System.out.println("Sartu zenbaki bat mesedez: \n");
+			}
 			bidea = scanner.nextInt();
+			
 		}
 		return bidea;
 	}

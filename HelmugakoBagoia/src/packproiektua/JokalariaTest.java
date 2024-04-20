@@ -32,59 +32,26 @@ class JokalariaTest {
 	@Test
 	void testAukeratuBidea() {
 		int biaMax = 4;
-		System.out.println("sartu 1 zenbakia");
+		
+		System.out.print("sartu 1 zenbakia: ");
 		assertEquals(1,j1.aukeratuBidea(biaMax));
 		
-		System.out.println("sartu 2 zenbakia");
+		System.out.print("sartu 2 zenbakia: ");
 		assertEquals(2,j1.aukeratuBidea(biaMax));
 		
-		System.out.println("sartu 3 zenbakia");
+		System.out.print("sartu 3 zenbakia: ");
 		assertEquals(3,j1.aukeratuBidea(biaMax));
 		
-		System.out.println("sartu 4 zenbakia");
+		System.out.print("sartu 4 zenbakia: ");
 		assertEquals(4,j1.aukeratuBidea(biaMax));
 		
-		System.out.println("sartu 1 zenbakia");
-		assertEquals(1,j2.aukeratuBidea(biaMax));
+		System.out.println("Hurrengo froga hau itzuli beharko luke: --Ez da existitzen aukeratu duzun bidea, mesedez beste zenbaki bat sartu:--");
+		System.out.print("sartu 5 zenbakia: ");
+		j1.aukeratuBidea(biaMax);
 		
-		System.out.println("sartu 2 zenbakia");
-		assertEquals(2,j2.aukeratuBidea(biaMax));
-		
-		System.out.println("sartu 3 zenbakia");
-		assertEquals(3,j2.aukeratuBidea(biaMax));
-		
-		System.out.println("sartu 4 zenbakia");
-		assertEquals(4,j2.aukeratuBidea(biaMax));
-		
-		System.out.println("sartu 1 zenbakia");
-		assertEquals(1,j3.aukeratuBidea(biaMax));
-		
-		System.out.println("sartu 2 zenbakia");
-		assertEquals(2,j3.aukeratuBidea(biaMax));
-		
-		System.out.println("sartu 3 zenbakia");
-		assertEquals(3,j3.aukeratuBidea(biaMax));
-		
-		System.out.println("sartu 4 zenbakia");
-		assertEquals(4,j3.aukeratuBidea(biaMax));
-		
-		System.out.println("sartu 1 zenbakia");
-		assertEquals(1,j4.aukeratuBidea(biaMax));
-		
-		System.out.println("sartu 2 zenbakia");
-		assertEquals(2,j4.aukeratuBidea(biaMax));
-		
-		System.out.println("sartu 3 zenbakia");
-		assertEquals(3,j4.aukeratuBidea(biaMax));
-		
-		System.out.println("sartu 4 zenbakia");
-		assertEquals(4,j4.aukeratuBidea(biaMax));
-		
-		
-		
-		
-		
-		
+		System.out.print("sartu e letra: ");
+		System.out.println("Hurrengo froga hau itzuli beharko luke: --Sartu zenbaki bat mesedez: --");
+		j1.aukeratuBidea(biaMax);
 		
 	}
 

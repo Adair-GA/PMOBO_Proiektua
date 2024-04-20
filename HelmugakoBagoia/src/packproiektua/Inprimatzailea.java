@@ -17,28 +17,42 @@ public class Inprimatzailea {
 	{
 		// TODO Auto-generated method stub
 		int i = 0;
+		int j = 0;
 		while (i < pZatiKop)
 		{
 			if(i == pOzt)
 			{
 				if(pLapurra)
 				{
-					System.out.print(" 😈 ​");
+					System.out.print("  🦊 ​");
 				}
 				else
 				{
-					System.out.print(" 🚧 ");
+					System.out.print("  🚧 ");
 				}
 			}
 			else if(i == pTxan)
 			{
-				System.out.print(" 🪙​ ");
+				System.out.print("  🪙​ ");
 			}
 			else
 			{
 				System.out.print(" |-| ");
 			}
 			i++;
+		}
+		System.out.println();
+		
+		while (j < 5)
+		{
+			i = 0;
+			while (i < pZatiKop)
+			{
+				System.out.print(" |-| ");
+				i++;
+			}
+			System.out.println();
+			j ++;
 		}
 	}
 

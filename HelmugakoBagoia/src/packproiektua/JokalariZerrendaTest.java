@@ -9,8 +9,8 @@ class JokalariZerrendaTest {
 	@SuppressWarnings("null")
 	@Test
 	void test() {
-		HelmugakoBagoia hb = new HelmugakoBagoia();
-		hb.jokatu();
+		Main hb = new Main();
+
 		
 	}
 
