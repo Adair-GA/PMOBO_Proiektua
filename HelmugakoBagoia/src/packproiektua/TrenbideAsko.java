@@ -20,7 +20,7 @@ public class TrenbideAsko extends TrenbideZatia
 		{
 			randomDiruaPos = r.nextInt(zatiKop);
 		}
-		int randomDiruaBalioa = 1 + r.nextInt(100);//txanponaren balioa 1-5era
+		int randomDiruaBalioa = 1 + r.nextInt(10);//txanponaren balioa 1-5era
 	//	System.out.println(randomDiruaBalioa);
 		//System.out.println(randomDiruaPos);
 		//System.out.println(randomOztPos);

@@ -10,7 +10,7 @@ public class Lapurra extends Oztopoa
 	
 	protected Lapurra()
 	{
-		this.DiruaBalioa = 1 + r.nextInt(100);
+		this.DiruaBalioa = 1 + r.nextInt(5);
 	}
 	
 	protected int getDiruaBalioa()
