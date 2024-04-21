@@ -18,6 +18,7 @@ public class Inprimatzailea {
 		// TODO Auto-generated method stub
 		int i = 0;
 		int j = 0;
+		System.out.print("........   ");
 		while (i < pZatiKop)
 		{
 			if(i == pOzt)
@@ -41,16 +42,19 @@ public class Inprimatzailea {
 			}
 			i++;
 		}
+		System.out.print("   ........");
 		System.out.println();
 		
 		while (j < 5)
 		{
 			i = 0;
+			System.out.print("........   ");
 			while (i < pZatiKop)
 			{
 				System.out.print(" |-| ");
 				i++;
 			}
+			System.out.print("   ........");
 			System.out.println();
 			j ++;
 		}

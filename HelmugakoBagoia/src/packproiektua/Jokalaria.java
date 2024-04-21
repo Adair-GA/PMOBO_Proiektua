@@ -15,10 +15,10 @@ public class Jokalaria {
 		this.pos = 1;
 		this.txanponak = 0;
 		this.galdu = false;
-		//this.izena = this.izenaAukeratu();
+		//this.izenaAukeratu();
 	}
 	
-	public void izenaAukeratu()
+	protected void izenaAukeratu()
 	{
 		this.izena = Teklatua.getTeklatua().getIzena();
 		

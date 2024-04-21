@@ -1,0 +1,7 @@
+Instrukzioak idatzi:
+1- aukeratu zure helmuga eta jokalari kopuruak
+2- partida bakoitzean banan banan aukeratu beharko duzue zein trenbidetik joango zareten
+3- "//txanpona" zuen bidetik agertzen bada 1etik 10erako balioko txanpona lortuko duzue
+4- "//oztopoa" zuen bidetik agertzen bada partida galduko duzue
+5- "//lapurra" zuen bidetik agertzen bada eta txanpon nahiko badituzue, 1-5erako balioko txanponak kenduko dizue. Txanponak izan ezean, galduko duzue
+6- Amaierara bi jokalari heltzen badira txanpon gehien dituen jokalariak irabaziko du

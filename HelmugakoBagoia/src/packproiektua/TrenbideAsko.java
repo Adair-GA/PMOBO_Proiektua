@@ -67,13 +67,11 @@ public class TrenbideAsko extends TrenbideZatia
 	protected ZatiMota getZatia(int pos)
 	{
 		Iterator<ZatiMota>itr = this.getIteradorea();
-		int i = -1;
 		boolean badago = false;
 		ZatiMota zm = null;
 		
 		while(itr.hasNext() && !badago)
 		{
-			i++;
 			zm = itr.next();
 			if(zm instanceof Oztopoa)
 			{

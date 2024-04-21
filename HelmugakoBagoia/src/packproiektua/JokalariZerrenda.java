@@ -110,6 +110,51 @@ public class JokalariZerrenda {
 		System.out.println("Irabazlea "+ irabazlea.izena +" da.");
 	}
 	
+	private void jokalariakJokatu(TrenbideAsko pTa, int pZatiKop, int pTxanda)
+	{
+		int aukera;
+		Iterator<Jokalaria>itr;
+		
+		itr = this.getIteradorea();
+		while(itr.hasNext())
+		{
+			Jokalaria jk = itr.next();
+			System.out.print("\n"+jk.izena + " zure txanda da, aukeratu zure bidea 1-etik " + pZatiKop + "-era: ");
+			aukera = jk.aukeratuBidea(pZatiKop) - 1;
+			if(jk instanceof Bot)
+			{
+				System.out.print(jk.pos + "\n");
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+			if(pTa.oztopoaDago() == aukera)
+			{
+				if(pTa.getZatia(pTxanda * 2) instanceof Lapurra)
+				{
+					if(jk.txanponak >= ((Lapurra) pTa.getZatia(pTxanda * 2)).getDiruaBalioa())
+					{
+						jk.txanponak -= ((Lapurra) pTa.getZatia(pTxanda * 2)).getDiruaBalioa();
+					}
+					else
+					{
+						jk.galdu = true;
+					}
+				}
+				else
+				{
+					jk.galdu = true;
+				}
+			}
+			if(pTa.txanponaDago() == aukera)
+			{
+				jk.txanponak += pTa.getTxanpona(aukera);
+			}
+		}
+		
+	}
 	
 	//trenbidea sortuta dago
 	protected int jokatu(int pZatiKop, int txandaMax)
@@ -117,8 +162,7 @@ public class JokalariZerrenda {
 		TrenbideZerrenda tz = TrenbideZerrenda.getTrenbideZerrenda(txandaMax, pZatiKop); 
 		TrenbideBat tb = null;
 		TrenbideAsko ta = null;
-		int txanda = 1, aukera, pos = 1;
-		Iterator<Jokalaria>itr;
+		int txanda = 1;
 		
 		while(this.lista.size() > 1 && txanda <= txandaMax)
 		{
@@ -137,52 +181,14 @@ public class JokalariZerrenda {
 						"       ╚═════════════════╝\n");	
 			}
 			
-			tb = (TrenbideBat) tz.zatiaLortu(pos);
+			tb = (TrenbideBat) tz.zatiaLortu(txanda * 2 - 1);
 			tb.inprimatuZatia();
-			pos ++;
-			ta = (TrenbideAsko) tz.zatiaLortu(pos);
-			pos ++;
-			itr = getIteradorea();
-			while(itr.hasNext())
-			{
-				Jokalaria jk = itr.next();
-				System.out.print("\n"+jk.izena + " zure txanda da, aukeratu zure bidea 1-etik " + pZatiKop + "-era: ");
-				aukera = jk.aukeratuBidea(pZatiKop) - 1;
-				if(jk instanceof Bot)
-				{
-					System.out.print(jk.pos + "\n");
-					try {
-						Thread.sleep(1000);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-				}
-				if(ta.oztopoaDago() == aukera)
-				{
-					if(ta.getZatia(pos) instanceof Lapurra)
-					{
-						if(jk.txanponak >= ((Lapurra) ta.getZatia(pos)).getDiruaBalioa())
-						{
-							jk.txanponak -= ((Lapurra) ta.getZatia(pos)).getDiruaBalioa();
-						}
-						else
-						{
-							jk.galdu = true;
-						}
-					}
-					else
-					{
-						jk.galdu = true;
-					}
-				}
-				if(ta.txanponaDago() == aukera)
-				{
-					jk.txanponak += ta.getTxanpona(aukera);
-				}
-			}
+			ta = (TrenbideAsko) tz.zatiaLortu(txanda * 2);
+			
+			jokalariakJokatu(ta, pZatiKop, txanda);
 			System.out.println();
 			
-			ta.inprimatuZatia(pZatiKop, ta.oztopoaDago(), ta.txanponaDago(), ta.getZatia(pos)instanceof Lapurra);
+			ta.inprimatuZatia(pZatiKop, ta.oztopoaDago(), ta.txanponaDago(), ta.getZatia(txanda * 2)instanceof Lapurra);
 			this.inprimatuTxanponak();
 			
 			try {

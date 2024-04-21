@@ -9,13 +9,12 @@ public class Bot extends Jokalaria {
 	
 	public Bot()
 	{
-		//super();
-		//this.izena = this.izenaAukeratu();
 		super();
+		this.izenaAukeratu();
 		
 	}
 	
-	public void izenaAukeratu()
+	protected void izenaAukeratu()
 	{
 		int randomIndex = r.nextInt(izenak.length);
 		this.izena = izenak[randomIndex];
