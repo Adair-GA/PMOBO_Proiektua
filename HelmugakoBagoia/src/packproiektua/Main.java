@@ -40,7 +40,7 @@ public class Main
 				+ "--> Ondarru: 6 biako trena.\n"
 				+ "--> Balmaseda: 7 biako trena.\n"
 				+ "--> Laudio: 8 biako trena.\n"
-				+ "--> Paris: 9 biako trena.\n"
+				+ "--> Txurdinaga: 9 biako trena.\n"
 				+ "--> Londres: 10 biako trena.\n"
 				+ "\nZorte on adventurers!"
 				+ "\n\nSakatu enter partidarekin hasteko...\n");
