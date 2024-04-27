@@ -3,10 +3,10 @@ package packproiektua;
 public class Jokalaria {
 	
 	//atributuak
-	protected String izena;
-	protected int pos;
-	protected int txanponak;
-	protected boolean galdu;
+	private String izena;
+	private int pos;
+	private int txanponak;
+	private boolean galdu;
 	
 	//eraikitzailea
 	
@@ -25,7 +25,7 @@ public class Jokalaria {
 	}
 	public int aukeratuBidea(int pBideMax)
 	{
-		return this.pos = Teklatua.getTeklatua().aukeratuBidea(pBideMax);
+		return Teklatua.getTeklatua().aukeratuBidea(pBideMax);
 	}
 	
 	public int getPosizioa()
@@ -33,8 +33,38 @@ public class Jokalaria {
 		return this.pos;
 	}
 	
+	public void setPosizioa(int pPos)
+	{
+		this.pos = pPos;
+	}
+	
 	public void gehituTxanponak(int pTxanponak)
 	{
 		this.txanponak += pTxanponak;
+	}
+	protected void setIzena(String pIzena)
+	{
+		this.izena = pIzena;
+	}
+
+	public String getIzena() {
+		return this.izena;
+	}
+
+	protected boolean getGaldu() {
+		return this.galdu;
+	}
+
+	public int getTxanponak() {
+		return this.txanponak;
+	}
+
+	public void kenduTxanponak(int diruaBalioa) {
+		this.txanponak -= diruaBalioa;	
+	}
+
+	public void setGaldu(boolean b) {
+		this.galdu = b;
+		
 	}
 }

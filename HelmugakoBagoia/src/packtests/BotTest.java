@@ -1,8 +1,11 @@
-package packproiektua;
+package packtests;
+import packproiektua.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+
+import packproiektua.Bot;
 
 class BotTest {
 
@@ -23,8 +26,7 @@ class BotTest {
 	@Test
 	void testBot() {
 		Bot bt = new Bot();
-		bt.izenaAukeratu();
-		System.out.println(bt.izena);
+		System.out.println(bt.getIzena());
 	}
 
 }

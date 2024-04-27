@@ -23,7 +23,7 @@ public class TrenbideZerrenda {
 		return nireTrenbideZerrenda;
 	}
 	
-	private void trenbideZerrendaSortu(int txandaMax, int pZatiKop) //geroago jarri dezakegu nibel kopuru desberdinak
+	private void trenbideZerrendaSortu(int txandaMax, int pZatiKop)
 	{
 		int i = 0;
 		while(txandaMax > i)
@@ -46,13 +46,6 @@ public class TrenbideZerrenda {
 		return this.lista.iterator();
 	}
 	
-	
-	/*public void inprimatuZatia(int pPos)
-	{
-		TrenbideZatia tz;
-		tz = zatiaLortu(pPos);
-		tz.inprimatuZatia();
-	}*/
 	
 	public TrenbideZatia zatiaLortu(int pos) 
 	{

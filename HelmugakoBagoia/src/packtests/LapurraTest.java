@@ -1,8 +1,11 @@
-package packproiektua;
+package packtests;
+import packproiektua.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+
+import packproiektua.Lapurra;
 
 class LapurraTest {
 

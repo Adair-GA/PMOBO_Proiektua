@@ -6,25 +6,25 @@ import java.util.Random;
 
 public class TrenbideAsko extends TrenbideZatia
 {
-	ArrayList<ZatiMota>lista;
+	private ArrayList<ZatiMota>lista;
 	private final Random r = new Random();
 	
-	public TrenbideAsko(int zatiKop)
+	public TrenbideAsko(int pZatiKop)
 	{
 		this.lista = new ArrayList<ZatiMota>();
 		
 		int i = 0;
-		int randomOztPos = r.nextInt(zatiKop);//oztopoaren posizioa
-		int randomDiruaPos = r.nextInt(zatiKop);//txanponaren posizioa
+		int randomOztPos = r.nextInt(pZatiKop);//oztopoaren posizioa
+		int randomDiruaPos = r.nextInt(pZatiKop);//txanponaren posizioa
 		while(randomDiruaPos == randomOztPos)
 		{
-			randomDiruaPos = r.nextInt(zatiKop);
+			randomDiruaPos = r.nextInt(pZatiKop);
 		}
 		int randomDiruaBalioa = 1 + r.nextInt(10);//txanponaren balioa 1-5era
 	//	System.out.println(randomDiruaBalioa);
 		//System.out.println(randomDiruaPos);
 		//System.out.println(randomOztPos);
-		while(i < zatiKop)
+		while(i < pZatiKop)
 		{
 			if(i == randomOztPos)
 			{
@@ -64,7 +64,7 @@ public class TrenbideAsko extends TrenbideZatia
 		return this.lista.iterator();
 	}
 	
-	protected ZatiMota getZatia(int pos)
+	protected ZatiMota getZatia(int pPos)
 	{
 		Iterator<ZatiMota>itr = this.getIteradorea();
 		boolean badago = false;
@@ -80,6 +80,7 @@ public class TrenbideAsko extends TrenbideZatia
 		}
 		return zm;
 	}
+	
 	protected int oztopoaDago()
 	{
 		Iterator<ZatiMota>itr = this.getIteradorea();
@@ -100,8 +101,7 @@ public class TrenbideAsko extends TrenbideZatia
 	
 	public void inprimatuZatia(int pZatiKop, int pOzt, int pTxan, boolean pLapurra) 
 	{
-		// TODO Auto-generated method stub
-		Inprimatzailea.inprimatuAsko(pZatiKop, pOzt, pTxan, pLapurra);
+		in.inprimatuAsko(pZatiKop, pOzt, pTxan, pLapurra);
 	}
 
 	public int txanponaDago() 

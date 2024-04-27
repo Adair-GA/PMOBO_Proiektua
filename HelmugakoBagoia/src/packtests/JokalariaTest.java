@@ -1,10 +1,13 @@
-package packproiektua;
+package packtests;
+import packproiektua.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import packproiektua.Jokalaria;
 
 class JokalariaTest {
 	
@@ -100,28 +103,28 @@ class JokalariaTest {
 		int txanponak=10;
 		
 		j1.gehituTxanponak(txanponak);
-		assertEquals(10, j1.txanponak);
+		assertEquals(10, j1.getTxanponak());
 		
 		j2.gehituTxanponak(txanponak);
-		assertEquals(10,j2.txanponak);
+		assertEquals(10,j2.getTxanponak());
 		
 		j3.gehituTxanponak(txanponak);
-		assertEquals(10,j3.txanponak);
+		assertEquals(10,j3.getTxanponak());
 		
 		j4.gehituTxanponak(txanponak);
-		assertEquals(10,j4.txanponak);
+		assertEquals(10,j4.getTxanponak());
 		
 		j1.gehituTxanponak(txanponak);
-		assertNotEquals(15,j1.txanponak);
+		assertNotEquals(15,j1.getTxanponak());
 		
 		j2.gehituTxanponak(txanponak);
-		assertNotEquals(18,j2.txanponak);
+		assertNotEquals(18,j2.getTxanponak());
 		
 		j3.gehituTxanponak(txanponak);
-		assertNotEquals(18,j3.txanponak);
+		assertNotEquals(18,j3.getTxanponak());
 		
 		j4.gehituTxanponak(txanponak);
-		assertNotEquals(18,j4.txanponak);
+		assertNotEquals(18,j4.getTxanponak());
 	}
 
 }

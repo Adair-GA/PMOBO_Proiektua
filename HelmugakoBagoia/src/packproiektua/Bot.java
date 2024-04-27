@@ -17,12 +17,12 @@ public class Bot extends Jokalaria {
 	protected void izenaAukeratu()
 	{
 		int randomIndex = r.nextInt(izenak.length);
-		this.izena = izenak[randomIndex];
+		super.setIzena(izenak[randomIndex]);
 	}
 	
 	@Override
 	public int aukeratuBidea(int pBideMax)
 	{
-		return this.pos = 1 + r.nextInt(pBideMax);
+		return (r.nextInt(pBideMax));
 	}
 }
