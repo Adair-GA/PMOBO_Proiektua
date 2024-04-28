@@ -35,7 +35,7 @@ public class Bozgorailua {
 		return nireBozgorailua;
 	}
 	
-	protected void backMusicHasi()
+	public void backMusicHasi()
 	{
 		try
 		{	

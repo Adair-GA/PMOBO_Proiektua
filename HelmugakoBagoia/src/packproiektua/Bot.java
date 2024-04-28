@@ -23,6 +23,6 @@ public class Bot extends Jokalaria {
 	@Override
 	public int aukeratuBidea(int pBideMax)
 	{
-		return (r.nextInt(pBideMax));
+		return (1 + r.nextInt(pBideMax));
 	}
 }

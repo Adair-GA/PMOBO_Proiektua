@@ -1,11 +1,5 @@
 package packproiektua;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.util.Scanner;
-
-import javax.sound.sampled.*;
 
 public class Main 
 {

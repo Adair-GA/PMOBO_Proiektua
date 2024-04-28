@@ -140,11 +140,11 @@ public class JokalariZerrenda {
 			}
 			if(pTa.oztopoaDago() == jk.getPosizioa())
 			{
-				if(pTa.getZatia(pTxanda * 2) instanceof Lapurra)
+				if(pTa.getZatia(jk.getPosizioa()) instanceof Lapurra)
 				{
-					if(jk.getTxanponak() >= ((Lapurra) pTa.getZatia(pTxanda * 2)).getDiruaBalioa())
+					if(jk.getTxanponak() >= ((Lapurra) pTa.getZatia(jk.getPosizioa())).getDiruaBalioa())
 					{
-						jk.kenduTxanponak(((Lapurra) pTa.getZatia(pTxanda * 2)).getDiruaBalioa());
+						jk.kenduTxanponak(((Lapurra) pTa.getZatia(jk.getPosizioa())).getDiruaBalioa());
 					}
 					else
 					{
@@ -158,7 +158,7 @@ public class JokalariZerrenda {
 			}
 			if(pTa.txanponaDago() == jk.getPosizioa())
 			{
-				jk.gehituTxanponak(pTa.getTxanpona(jk.getPosizioa()));
+				jk.gehituTxanponak(pTa.getTxanpona());
 			}
 		}
 		

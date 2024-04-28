@@ -67,16 +67,12 @@ public class TrenbideAsko extends TrenbideZatia
 	protected ZatiMota getZatia(int pPos)
 	{
 		Iterator<ZatiMota>itr = this.getIteradorea();
-		boolean badago = false;
 		ZatiMota zm = null;
+		int i = 0;
 		
-		while(itr.hasNext() && !badago)
+		while(itr.hasNext() && i<=pPos)
 		{
 			zm = itr.next();
-			if(zm instanceof Oztopoa)
-			{
-				badago = true;
-			}
 		}
 		return zm;
 	}
@@ -122,7 +118,7 @@ public class TrenbideAsko extends TrenbideZatia
 		return i;
 	}
 
-	public int getTxanpona(int aukera) 
+	public int getTxanpona() 
 	{
 		Iterator<ZatiMota>itr = this.getIteradorea();
 		int dirua = 0;

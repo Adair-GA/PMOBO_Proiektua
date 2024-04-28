@@ -3,7 +3,7 @@ package packproiektua;
 public class HelmugakoBagoia {
 	
 	
-	public void partidaHasi() 
+	public void partidaHasi()
 	{
 		//Hasieraketak--------------------------------------------------------------------
 		Teklatua t = Teklatua.getTeklatua();
@@ -62,7 +62,7 @@ public class HelmugakoBagoia {
 						+ "--> Ondarru: 6 biako trena.\n"
 						+ "--> Balmaseda: 7 biako trena.\n"
 						+ "--> Laudio: 8 biako trena.\n"
-						+ "--> Paris: 9 biako trena.\n"
+						+ "--> Txurdinaga: 9 biako trena.\n"
 						+ "--> Londres: 10 biako trena.\n"
 						+ "\nZorte on adventurers!"
 						+ "\n\nSakatu 1 partidarekin hasteko...\n";
@@ -134,6 +134,7 @@ public class HelmugakoBagoia {
 		TrenbideBat tb = null;
 		TrenbideAsko ta = null;
 		int txanda = 1;
+		
 		
 		while(jz.getZerrendaLuzera() > 1 && txanda <= pTxandaMax)
 		{

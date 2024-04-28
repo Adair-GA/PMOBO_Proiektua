@@ -25,8 +25,13 @@ class BotTest {
 
 	@Test
 	void testBot() {
-		Bot bt = new Bot();
-		System.out.println(bt.getIzena());
+		int i = 0;
+		while(i<10)
+		{
+			Bot bt = new Bot();
+			System.out.println(bt.getIzena());
+			i++;
+		}
 	}
 
 }
