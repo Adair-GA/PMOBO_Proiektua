@@ -17,7 +17,7 @@ public class Teklatua {
 		return nireTeklatua;
 	}
 	
-	protected void getReturn()
+	public void getReturn()
 	{
 		String input;
 		input = scanner.nextLine();
