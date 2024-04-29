@@ -4,11 +4,11 @@ public class Dirua extends ZatiMota
 {
 	private int balioa;
 	
-	protected Dirua(int diruaBalioa)
+	public Dirua(int diruaBalioa)
 	{
 		this.balioa = diruaBalioa;
 	}
-	protected int getBalioa()
+	public int getBalioa()
 	{
 		return this.balioa;
 	}
