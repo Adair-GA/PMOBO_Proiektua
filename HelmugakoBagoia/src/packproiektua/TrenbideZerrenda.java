@@ -47,13 +47,13 @@ public class TrenbideZerrenda {
 	}
 	
 	
-	public TrenbideZatia zatiaLortu(int pos) 
+	public TrenbideZatia zatiaLortu(int pPos) 
 	{
 		Iterator <TrenbideZatia> itr=this.getIteradorea();
 		TrenbideZatia zati = null;
 		int i = 0;
 		
-		while(itr.hasNext() && i < pos) 
+		while(itr.hasNext() && i < pPos) 
 		{
 			zati=itr.next();
 			i++;

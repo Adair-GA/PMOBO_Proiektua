@@ -101,19 +101,17 @@ public class JokalariZerrenda {
 		Iterator<Jokalaria>itr;
 		Jokalaria irabazlea = null, jk = null;
 		int txanponMax = 0, txanponak;
-		int pos = 0;
 		
 		itr = getIteradorea();
 		while (itr.hasNext())
 		{
 			jk = itr.next();
-			txanponak = this.lista.get(pos).getTxanponak();
+			txanponak = jk.getTxanponak();
 			if (txanponak > txanponMax)
 			{
 				txanponMax = txanponak;
 				irabazlea = jk;
 			}
-			pos ++;
 		}
 		System.out.println("Irabazlea "+ irabazlea.getIzena() +" da.");
 	}
