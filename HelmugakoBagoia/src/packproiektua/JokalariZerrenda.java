@@ -38,7 +38,6 @@ public class JokalariZerrenda {
 	public void botaSortu()
 	{
 		Bot bt = new Bot();
-		bt.izenaAukeratu();
 		this.lista.add(bt);
 	}
 	

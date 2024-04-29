@@ -64,7 +64,7 @@ public class TrenbideAsko extends TrenbideZatia
 		return this.lista.iterator();
 	}
 	
-	protected ZatiMota getZatia(int pPos)
+	public ZatiMota getZatia(int pPos)
 	{
 		Iterator<ZatiMota>itr = this.getIteradorea();
 		ZatiMota zm = null;
@@ -77,7 +77,7 @@ public class TrenbideAsko extends TrenbideZatia
 		return zm;
 	}
 	
-	protected int oztopoaDago()
+	public int oztopoaDago()
 	{
 		Iterator<ZatiMota>itr = this.getIteradorea();
 		int i = -1;

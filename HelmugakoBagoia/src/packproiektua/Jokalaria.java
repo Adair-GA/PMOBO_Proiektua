@@ -18,7 +18,7 @@ public class Jokalaria {
 		//this.izenaAukeratu();
 	}
 	
-	protected void izenaAukeratu()
+	public void izenaAukeratu()
 	{
 		this.izena = Teklatua.getTeklatua().getIzena();
 		
@@ -42,7 +42,8 @@ public class Jokalaria {
 	{
 		this.txanponak += pTxanponak;
 	}
-	protected void setIzena(String pIzena)
+	
+	public void setIzena(String pIzena)
 	{
 		this.izena = pIzena;
 	}
@@ -51,7 +52,7 @@ public class Jokalaria {
 		return this.izena;
 	}
 
-	protected boolean getGaldu() {
+	public boolean getGaldu() {
 		return this.galdu;
 	}
 
