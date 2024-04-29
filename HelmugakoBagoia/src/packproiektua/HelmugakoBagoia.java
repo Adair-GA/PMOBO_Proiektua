@@ -50,20 +50,20 @@ public class HelmugakoBagoia {
 			else if(botoia == 2)
 			{
 				pString = "Ongi etorri Helmugako Bagoiara!\n"
-						+ "Tren hau oso berezia da, izan ere, norberak erabakitzen du hartu nahi duen bidea. Bidai honetan zehar hainbat alditan erabaki "
-						+ "\nbeharko duzu zein bidetik joango zaren eta zorte izanez gero, dirua lortuko duzu, partida irabaztea ahalbidetuko dizuna."
-						+ "\nBAINA KONTUZ!! Trenbide zati batzuk apurtu dira eta ezin izango zara bertatik pasatu."
-						+ "\nGainera lapurrak agertu dira azkenaldian. Dirua izan ezean haserretuko dira, beraz kontuz."
-						+ "\nPrest zaudete helmugara heltzeko?"
+						+ "Tren hau oso berezia da, izan ere, norberak erabakitzen du zein trenbidetatik joan. Bidai luze honetan zehar hainbat alditan erabaki "
+						+ "\nbeharko duzu zein trenbidetik joango zaren eta zortea izanez gero, dirua lortuko duzu, partida irabaztea ahalbidetuko dizuna."
+						+ "\nBAINA KONTUZ!! Trenbide zati batzuk apurtuta daude eta ezin izango zara trenbide horretatik pasatu."
+						+ "\nGainera, lapurrak agertu dira azkenaldian, dirua izan ezean haserretuko dira eta hil egingo zaituzte, beraz, erne ibili!"
+						+ "\nPrest zaude helmugara heltzeko?"
 						+ "\nTrenak hurrengo helmugak ditu:\n\n"
-						+ "--> Bilbo: 3 biako trena.\n"
-						+ "--> Donostia: 4 biako trena.\n"
-						+ "--> Gasteiz: 5 biako trena.\n"
-						+ "--> Ondarru: 6 biako trena.\n"
-						+ "--> Balmaseda: 7 biako trena.\n"
-						+ "--> Laudio: 8 biako trena.\n"
-						+ "--> Txurdinaga: 9 biako trena.\n"
-						+ "--> Londres: 10 biako trena.\n"
+						+ "--> Bilbo: 3 trenbideko trena.\n"
+						+ "--> Donostia: 4 trenbideko trena.\n"
+						+ "--> Gasteiz: 5 trenbideko trena.\n"
+						+ "--> Ondarru: 6 trenbideko trena.\n"
+						+ "--> Balmaseda: 7 trenbideko trena.\n"
+						+ "--> Laudio: 8 trenbideko trena.\n"
+						+ "--> Txurdinaga: 9 trenbideko trena.\n"
+						+ "--> Londres: 10 trenbideko trena.\n"
 						+ "\nZorte on adventurers!"
 						+ "\n\nSakatu 1 partidarekin hasteko...\n";
 				in.idazketaAnimazioa(pString);
@@ -76,16 +76,16 @@ public class HelmugakoBagoia {
 		in.idazketaAnimazioa(pString);
 		
 		//aukerak---------------------------------------------------------
-		pString = "\nAukeratu zure helmuga, bia kopuruarekin: ";
+		pString = "\nAukeratu zure helmuga, trenbide kopuruarekin: ";
 		in.idazketaAnimazioa(pString);
 		biaKop = t.aukeratuInt();
 		while(biaKop < 3 || biaKop > 10)
 		{
-			in.idazketaAnimazioa("Sartutako bia kopurua ez da nahikoa jolasarekin hasteko, mesedez, 3 edo gehiago edo 10 baino gutxiago aukeratu: ");
+			in.idazketaAnimazioa("Sartutako trenbide kopurua ez da nahikoa jolasarekin hasteko, mesedez, 3 edo gehiago eta 10 baino gutxiago aukeratu: ");
 			biaKop = t.aukeratuInt();
 		}
 		
-		pString = "\nAukeratu zenbat jokalari dauden: ";
+		pString = "\nZenbat jokalari zarete? ";
 		in.idazketaAnimazioa(pString);
 		joKop = t.aukeratuInt();
 		while(joKop < 1)

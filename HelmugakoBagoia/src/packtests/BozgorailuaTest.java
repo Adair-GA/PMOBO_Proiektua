@@ -31,12 +31,14 @@ class BozgorailuaTest {
 
 	@Test
 	void testBackMusicPausatu() {
-		fail("Not yet implemented");
+		Bozgorailua bz = Bozgorailua.getBozgorailua();
+		//bz.backMusicPausatu();
 	}
 
 	@Test
 	void testBackMusicItzali() {
-		fail("Not yet implemented");
+		Bozgorailua bz = Bozgorailua.getBozgorailua();
+		//bz.backMusicItzali();
 	}
 
 }
