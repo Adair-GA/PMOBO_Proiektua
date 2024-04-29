@@ -60,4 +60,8 @@ public class TrenbideZerrenda {
 		}
 		return zati;
 	}
+	
+	public void resetTrenbideZerrenda() {
+		nireTrenbideZerrenda = null;
+	}
 }

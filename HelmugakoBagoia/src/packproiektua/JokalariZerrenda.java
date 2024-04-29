@@ -162,5 +162,8 @@ public class JokalariZerrenda {
 		}
 		
 	}
+	public void resetZerrenda() {
+		nireJokalariZerrenda = null;
+	}
 	
 }

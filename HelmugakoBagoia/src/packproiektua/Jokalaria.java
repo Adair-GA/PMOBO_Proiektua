@@ -20,7 +20,7 @@ public class Jokalaria {
 	
 	public void izenaAukeratu()
 	{
-		this.izena = Teklatua.getTeklatua().getIzena();
+		this.izena = Teklatua.getTeklatua().getString("Idatzi zure izena: ");
 		
 	}
 	public int aukeratuBidea(int pBideMax)

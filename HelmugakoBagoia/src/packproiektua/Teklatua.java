@@ -27,9 +27,9 @@ public class Teklatua {
 		}
 	}
 	
-	public String getIzena() 
+	public String getString(String pString) 
 	{
-		System.out.println("Idatzi zure izena: ");
+		System.out.println(pString);
 		return scanner.nextLine();
 	}
 	

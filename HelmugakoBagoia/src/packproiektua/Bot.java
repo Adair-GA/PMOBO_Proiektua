@@ -10,7 +10,6 @@ public class Bot extends Jokalaria {
 	public Bot()
 	{
 		super();
-		this.izenaAukeratu();
 		
 	}
 	

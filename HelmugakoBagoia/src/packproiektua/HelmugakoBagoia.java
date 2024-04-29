@@ -124,6 +124,14 @@ public class HelmugakoBagoia {
 		{
 			in.zorionakIdatzi();
 		}
+		in.idazketaAnimazioa("\nBeste partida bat hasi nahi duzu?");
+		t.getReturn();
+		String eran = t.getString("\nBai edo ez idatzi: ");
+		if(eran.equalsIgnoreCase("bai")) {
+			jz.resetZerrenda();
+			this.partidaHasi();
+		}
+		in.idazketaAnimazioa("Ados! Hurrengo baterarte!");
 		bz.backMusicItzali();
 	}
 	

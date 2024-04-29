@@ -42,28 +42,28 @@ class TeklatuaTest {
 	@Test
 	void testGetIzena() {
 		System.out.println("Sartu Erlantz: ");
-		assertEquals("Erlantz", tkl1.getIzena());
+		assertEquals("Erlantz", tkl1.getString("Idatzi zure izena: "));
 		
 		System.out.println("Sartu Erlantz: ");
-		assertEquals("Erlantz", tkl2.getIzena());
+		assertEquals("Erlantz", tkl2.getString("Idatzi zure izena: "));
 		
 		System.out.println("Sartu Erlantz: ");
-		assertEquals("Erlantz", tkl3.getIzena());
+		assertEquals("Erlantz", tkl3.getString("Idatzi zure izena: "));
 		
 		System.out.println("Sartu Erlantz: ");
-		assertEquals("Erlantz", tkl4.getIzena());
+		assertEquals("Erlantz", tkl4.getString("Idatzi zure izena: "));
 		
 		System.out.println("Sartu Erlantz: ");
-		assertNotEquals("Jon", tkl1.getIzena());
+		assertNotEquals("Jon", tkl1.getString("Idatzi zure izena: "));
 		
 		System.out.println("Sartu Erlantz: ");
-		assertNotEquals("Mikel", tkl2.getIzena());
+		assertNotEquals("Mikel", tkl2.getString("Idatzi zure izena: "));
 		
 		System.out.println("Sartu Erlantz: ");
-		assertNotEquals("Iker", tkl3.getIzena());
+		assertNotEquals("Iker", tkl3.getString("Idatzi zure izena: "));
 		
 		System.out.println("Sartu Erlantz: ");
-		assertNotEquals("Ane", tkl4.getIzena());
+		assertNotEquals("Ane", tkl4.getString("Idatzi zure izena: "));
 	}
 
 	@Test
