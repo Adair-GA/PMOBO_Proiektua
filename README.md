@@ -6,3 +6,20 @@ Gure proiektuaren deskribapena
 Azken momentuan bi jokalari geldituz eta biak trenbide desegokia aukeratuz gero, diru gehien duen jokalaria izango da partidako irabazlea. 
 
 Hau da, zortea izango da bakarrik helmugaraino eramango duena. 
+
+Jolasa
+--
+/*argazkiak*/
+
+Runable .jar
+--
+Jolasa frogatzeko hurrengo pausuak jarraitu.
+
+-Errepositorioa klonatu
+```bash
+git clone https://github.com/LUC1A05/PMOBO_Proiektua.git HelmugakoBagoia
+```
+-.jar fitxategia ireki
+```bash
+cd HelmugakoBagoia && java -jar HelmugakoBag.jar
+```
