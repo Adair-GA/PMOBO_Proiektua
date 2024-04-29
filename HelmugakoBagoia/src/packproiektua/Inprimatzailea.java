@@ -17,7 +17,7 @@ public class Inprimatzailea {
 		return nireInprimatzailea;
 	}
 	
-	protected void inprimatuBat()
+	public void inprimatuBat()
 	{
 		int i = 0;
 		while(i < 5)
@@ -28,7 +28,7 @@ public class Inprimatzailea {
 	}
 
 
-	protected void inprimatuAsko(int pZatiKop, int pOzt, int pTxan, boolean pLapurra) 
+	public void inprimatuAsko(int pZatiKop, int pOzt, int pTxan, boolean pLapurra) 
 	{
 		// TODO Auto-generated method stub
 		int i = 0;
@@ -90,7 +90,7 @@ public class Inprimatzailea {
 		}
 	}
 	
-	protected void zorionakIdatzi()
+	public void zorionakIdatzi()
 	{
 		System.out.print("         ,----,                                                                     \r\n"
 				+ "       .'   .`|                                                                ,-.  \r\n"

@@ -14,7 +14,7 @@ public class Bot extends Jokalaria {
 		
 	}
 	
-	protected void izenaAukeratu()
+	public void izenaAukeratu()
 	{
 		int randomIndex = r.nextInt(izenak.length);
 		super.setIzena(izenak[randomIndex]);

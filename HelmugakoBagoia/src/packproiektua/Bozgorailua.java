@@ -44,7 +44,7 @@ public class Bozgorailua {
 		}
 	}
 	
-	protected void backMusicPausatu()
+	public void backMusicPausatu()
 	{
 		try {
 			clip.stop();
@@ -53,7 +53,7 @@ public class Bozgorailua {
 		}
 	}
 	
-	protected void backMusicItzali()
+	public void backMusicItzali()
 	{
 		try {
 			clip.stop();
