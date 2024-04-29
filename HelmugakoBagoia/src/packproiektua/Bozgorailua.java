@@ -11,14 +11,14 @@ public class Bozgorailua {
 	{
 		try
 		{
-			String filePath = "/sounds/backgroundMusic.v";
+			String filePath = "/sounds/backgroundMusic.wav";
 			clip = AudioSystem.getClip();
 			
 			AudioInputStream inputStream = AudioSystem.getAudioInputStream(getClass().getResource(filePath));
 			
 			clip.open(inputStream);
 		}catch(Exception e) {
-			System.out.println("soy subnormal");
+			e.printStackTrace();
 		}
 		
 	}
