@@ -52,7 +52,7 @@ public class JokalariZerrenda {
 		return this.lista.get(pPos);
 	}
 	
- 	protected void ezabatuJokalariak()
+ 	public void ezabatuJokalariak()
 	{
 		Iterator<Jokalaria>itr = getIteradorea();
 		Jokalaria jk = null;
@@ -85,7 +85,7 @@ public class JokalariZerrenda {
 		
 	}
 	
-	protected void inprimatuTxanponak()
+	public void inprimatuTxanponak()
 	{
 		System.out.println("\n\nWallet: ");
 		Iterator<Jokalaria>itr = getIteradorea();
@@ -97,7 +97,7 @@ public class JokalariZerrenda {
 		}
 	}
 	
-	protected void norDaDirudunena()
+	public void norDaDirudunena()
 	{
 		Iterator<Jokalaria>itr;
 		Jokalaria irabazlea = null, jk = null;
@@ -119,7 +119,7 @@ public class JokalariZerrenda {
 		System.out.println("Irabazlea "+ irabazlea.getIzena() +" da.");
 	}
 	
-	protected void jokalariakJokatu(TrenbideAsko pTa, int pZatiKop, int pTxanda)
+	public void jokalariakJokatu(TrenbideAsko pTa, int pZatiKop, int pTxanda)
 	{
 		Iterator<Jokalaria>itr;
 		
