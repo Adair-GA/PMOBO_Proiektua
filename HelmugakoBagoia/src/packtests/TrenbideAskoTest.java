@@ -2,55 +2,46 @@ package packtests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class TrenbideAskoTest {
-	
-	@BeforeEach
-	void setUp() throws Exception{
-		
-	}
-	
-	@AfterEach
-	void tearDown() throws Exception{
-		
-	}
+import packproiektua.TrenbideAsko;
 
+class TrenbideAskoTest {
+
+	TrenbideAsko ta;
+	
 	@Test
 	void testInprimatuZatia() {
-		fail("Not yet implemented");
+		ta = new TrenbideAsko(3);
+		ta.inprimatuZatia();
 	}
 
-	@Test
-	void testTrenbideAsko() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testGetZatia() {
-		fail("Not yet implemented");
-	}
 
 	@Test
 	void testOztopoaDago() {
-		fail("Not yet implemented");
+		TrenbideAsko trenbide = new TrenbideAsko(5);
+		int oztopoaPos = trenbide.oztopoaDago();
+		assertTrue(oztopoaPos >= 0 && oztopoaPos < 5);
 	}
 
 	@Test
 	void testInprimatuZatiaIntIntIntBoolean() {
-		fail("Not yet implemented");
+		ta = new TrenbideAsko(4);
+		ta.inprimatuZatia(4, 2, 3, false);
 	}
 
 	@Test
 	void testTxanponaDago() {
-		fail("Not yet implemented");
+		TrenbideAsko trenbide = new TrenbideAsko(5);
+		int txanponaPos = trenbide.txanponaDago();
+		assertTrue(txanponaPos >= 0 && txanponaPos < 5);
 	}
 
 	@Test
 	void testGetTxanpona() {
-		fail("Not yet implemented");
+		TrenbideAsko trenbide = new TrenbideAsko(5);
+		int txanponBalioa = trenbide.getTxanpona();
+		assertTrue(txanponBalioa >= 1 && txanponBalioa <= 10);
 	}
 
 }

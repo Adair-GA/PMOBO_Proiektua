@@ -2,6 +2,6 @@ package packproiektua;
 
 public abstract class TrenbideZatia 
 {
-	public Inprimatzailea in = Inprimatzailea.getInprimatzailea();
-	public abstract void inprimatuZatia();
+	protected Inprimatzailea in = Inprimatzailea.getInprimatzailea();
+	protected abstract void inprimatuZatia();
 }

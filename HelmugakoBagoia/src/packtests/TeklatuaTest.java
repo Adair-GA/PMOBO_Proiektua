@@ -36,7 +36,7 @@ class TeklatuaTest {
 
 	@Test
 	void testGetReturn() {
-		fail("Not yet implemented");
+		tkl1.getReturn();
 	}
 
 	@Test

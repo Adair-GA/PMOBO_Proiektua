@@ -1,7 +1,5 @@
 package packproiektua;
 
-import java.io.File;
-
 import javax.sound.sampled.*;
 
 public class Bozgorailua {
