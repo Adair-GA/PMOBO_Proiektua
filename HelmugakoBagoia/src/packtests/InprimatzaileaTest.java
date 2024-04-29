@@ -2,18 +2,36 @@ package packtests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import packproiektua.Inprimatzailea;
+
 class InprimatzaileaTest {
+	
+	private Inprimatzailea  i1;
+	
+	@BeforeEach
+	void setUp() throws Exception{
+		i1=Inprimatzailea.getInprimatzailea();
+	}
+	@AfterEach
+	void tearDown() throws Exception{
+		i1=null;
+	}
+	
 
 	@Test
 	void testGetInprimatzailea() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	void testInprimatuBat() {
-		fail("Not yet implemented");
+		int i=0;
+		
+		
 	}
 
 	@Test
