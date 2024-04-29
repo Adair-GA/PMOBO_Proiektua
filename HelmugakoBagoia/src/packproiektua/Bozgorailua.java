@@ -13,11 +13,10 @@ public class Bozgorailua {
 	{
 		try
 		{
-			String filePath = "./src/sounds/backgroundMusic.wav";
-			File audioFile = new File(filePath);
+			String filePath = "/sounds/backgroundMusic.wav";
 			clip = AudioSystem.getClip();
 			
-			AudioInputStream inputStream = AudioSystem.getAudioInputStream(audioFile);
+			AudioInputStream inputStream = AudioSystem.getAudioInputStream(getClass().getResource(filePath));
 			
 			clip.open(inputStream);
 		}catch(Exception e) {
