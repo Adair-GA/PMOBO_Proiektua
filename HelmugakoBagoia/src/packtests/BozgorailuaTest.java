@@ -9,13 +9,11 @@ import org.junit.jupiter.api.Test;
 import packproiektua.Bozgorailua;
 
 class BozgorailuaTest {
-	private Bozgorailua b1,b2,b3;
+	private Bozgorailua b;
 	
 	@BeforeEach
 	void setUp() throws Exception{
-		b1=new Bozgorailua().getBozgorailua();
-		b2=new Bozgorailua().getBozgorailua();
-		b3=new Bozgorailua().getBozgorailua();
+		b = Bozgorailua.getBozgorailua();
 	}
 
 	@Test
@@ -27,18 +25,24 @@ class BozgorailuaTest {
 	void testBackMusicHasi() {
 		Bozgorailua bz = Bozgorailua.getBozgorailua();
 		bz.backMusicHasi();
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Test
 	void testBackMusicPausatu() {
 		Bozgorailua bz = Bozgorailua.getBozgorailua();
-		//bz.backMusicPausatu();
+		bz.backMusicPausatu();
 	}
 
 	@Test
 	void testBackMusicItzali() {
 		Bozgorailua bz = Bozgorailua.getBozgorailua();
-		//bz.backMusicItzali();
+		bz.backMusicItzali();
 	}
 
 }
