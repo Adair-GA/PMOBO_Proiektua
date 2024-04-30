@@ -29,5 +29,5 @@ git clone https://github.com/LUC1A05/PMOBO_Proiektua.git HelmugakoBagoia
 ```
 -.jar fitxategia ireki
 ```bash
-cd HelmugakoBagoia && java -jar HelmugakoBag.jar
+cd HelmugakoBagoia ; java -jar HelmugakoBag.jar
 ```
