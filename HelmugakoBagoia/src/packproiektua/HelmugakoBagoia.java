@@ -49,7 +49,7 @@ public class HelmugakoBagoia {
 			}
 			else if(botoia == 2)
 			{
-				pString = "Ongi etorri Helmugako Bagoiara!\n"
+				pString = "Ongi etorri Helmugako Bagoira!\n"
 						+ "Tren hau oso berezia da, izan ere, norberak erabakitzen du zein trenbidetatik joan. Bidai luze honetan zehar hainbat alditan erabaki "
 						+ "\nbeharko duzu zein trenbidetik joango zaren eta zortea izanez gero, dirua lortuko duzu, partida irabaztea ahalbidetuko dizuna."
 						+ "\nBAINA KONTUZ!! Trenbide zati batzuk apurtuta daude eta ezin izango zara trenbide horretatik pasatu."

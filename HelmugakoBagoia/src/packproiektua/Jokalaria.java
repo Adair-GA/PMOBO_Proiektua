@@ -1,5 +1,8 @@
 package packproiektua;
 
+import packexceptions.NotInRangeException;
+import packexceptions.NotIntException;
+
 public class Jokalaria {
 	
 	//atributuak
@@ -25,7 +28,15 @@ public class Jokalaria {
 	}
 	public int aukeratuBidea(int pBideMax)
 	{
-		return Teklatua.getTeklatua().aukeratuBidea(pBideMax);
+		try {
+			return Teklatua.getTeklatua().aukeratuBidea(pBideMax);
+		} catch (NotInRangeException e) {
+			System.out.println("Error: Aukeratu bide egoki bat. 1-etik "+ pBideMax + "-era.");
+			return this.aukeratuBidea(pBideMax);
+		} catch(NotIntException e) {
+			System.out.println("Error: Zenbaki bat aukeratu mesedez.");
+			return this.aukeratuBidea(pBideMax);
+		}
 	}
 	
 	public int getPosizioa()
