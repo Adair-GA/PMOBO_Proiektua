@@ -53,7 +53,7 @@ public class Teklatua {
 	
 	public int aukeratuInt()
 	{
-		while(!scanner.hasNextInt())
+		if(!scanner.hasNextInt())
 		{
 			scanner.next();
 			System.out.println("Sartu zenbaki bat mesedez: \n");

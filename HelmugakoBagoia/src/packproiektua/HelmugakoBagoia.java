@@ -1,5 +1,7 @@
 package packproiektua;
 
+import packexceptions.NotIntException;
+
 public class HelmugakoBagoia {
 	
 	
@@ -97,6 +99,7 @@ public class HelmugakoBagoia {
 		pString = "\nAukeratu zenbat bot nahi dituzun: ";
 		in.idazketaAnimazioa(pString);
 		botKop = t.aukeratuInt();
+	
 		
 		txandaMax = ((botKop + joKop)*2 + biaKop * 3)/2;
 		System.out.println();
@@ -118,7 +121,8 @@ public class HelmugakoBagoia {
 		}
 	
 		System.out.println("Hurrengo partidak " + txandaMax + " txanda izango ditu.\n");
-		int irabazlerik = this.jokatu(biaKop, txandaMax);
+		TrenbideZerrenda tz = TrenbideZerrenda.getTrenbideZerrenda(txandaMax, biaKop); 
+		int irabazlerik = this.jokatu(biaKop, txandaMax, tz);
 	
 		if (irabazlerik == 0)
 		{
@@ -129,16 +133,18 @@ public class HelmugakoBagoia {
 		String eran = t.getString("\nBai edo ez idatzi: ");
 		if(eran.equalsIgnoreCase("bai")) {
 			jz.resetZerrenda();
+			tz.resetTrenbideZerrenda();
 			this.partidaHasi();
 		}
-		in.idazketaAnimazioa("Ados! Hurrengo baterarte!");
-		bz.backMusicItzali();
+		else {
+			in.idazketaAnimazioa("Ados! Hurrengo baterarte!");
+			bz.backMusicItzali();
+		}
 	}
 	
-	private int jokatu(int pBiaKop, int pTxandaMax) 
+	private int jokatu(int pBiaKop, int pTxandaMax, TrenbideZerrenda tz) 
 	{
 		JokalariZerrenda jz = JokalariZerrenda.getJokalariZerrenda();
-		TrenbideZerrenda tz = TrenbideZerrenda.getTrenbideZerrenda(pTxandaMax, pBiaKop); 
 		TrenbideBat tb = null;
 		TrenbideAsko ta = null;
 		int txanda = 1;

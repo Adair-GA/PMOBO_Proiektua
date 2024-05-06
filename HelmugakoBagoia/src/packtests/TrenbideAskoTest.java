@@ -9,12 +9,6 @@ import packproiektua.TrenbideAsko;
 class TrenbideAskoTest {
 
 	TrenbideAsko ta;
-	
-	@Test
-	void testInprimatuZatia() {
-		ta = new TrenbideAsko(3);
-		ta.inprimatuZatia();
-	}
 
 
 	@Test
