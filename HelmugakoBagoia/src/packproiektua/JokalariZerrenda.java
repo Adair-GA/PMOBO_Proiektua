@@ -116,7 +116,7 @@ public class JokalariZerrenda {
 		System.out.println("Irabazlea "+ irabazlea.getIzena() +" da.");
 	}
 	
-	public void jokalariakJokatu(TrenbideAsko pTa, int pZatiKop, int pTxanda)
+	public void jokalariakJokatu(TrenbideAsko pTa, int pZatiKop)
 	{
 		Iterator<Jokalaria>itr;
 		

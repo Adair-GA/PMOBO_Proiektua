@@ -75,8 +75,8 @@ public class Jokalaria {
 		this.txanponak -= diruaBalioa;	
 	}
 
-	public void setGaldu(boolean b) {
-		this.galdu = b;
+	public void setGaldu(boolean pB) {
+		this.galdu = pB;
 		
 	}
 }

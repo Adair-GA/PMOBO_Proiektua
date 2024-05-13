@@ -130,6 +130,7 @@ public class HelmugakoBagoia {
 		}
 		in.idazketaAnimazioa("\nBeste partida bat hasi nahi duzu?");
 		t.getReturn();
+		bz.backMusicItzali();
 		String eran = t.getString("\nBai edo ez idatzi: ");
 		if(eran.equalsIgnoreCase("bai")) {
 			jz.resetZerrenda();
@@ -171,7 +172,7 @@ public class HelmugakoBagoia {
 			tb.inprimatuZatia();
 			ta = (TrenbideAsko) tz.zatiaLortu(txanda * 2);
 			
-			jz.jokalariakJokatu(ta, pBiaKop, txanda);
+			jz.jokalariakJokatu(ta, pBiaKop);
 			System.out.println();
 			
 			ta.inprimatuZatia(pBiaKop, ta.oztopoaDago(), ta.txanponaDago(), ta.getZatia(txanda * 2)instanceof Lapurra);
