@@ -1,7 +1,5 @@
 package packproiektua;
 
-import packexceptions.NotIntException;
-
 public class HelmugakoBagoia {
 	
 	
