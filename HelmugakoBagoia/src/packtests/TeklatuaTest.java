@@ -6,6 +6,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import packexceptions.NotInRangeException;
+import packexceptions.NotIntException;
 import packproiektua.Teklatua;
 
 class TeklatuaTest {
@@ -67,7 +69,7 @@ class TeklatuaTest {
 	}
 
 	@Test
-	void testAukeratuBidea() {
+	void testAukeratuBidea() throws NotIntException, NotInRangeException {
 	int bideMax=4;
 		
 		System.out.println("Sartu bide kopuru bat: ");

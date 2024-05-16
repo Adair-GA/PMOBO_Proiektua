@@ -1,5 +1,7 @@
 package packproiektua;
 
+import packexceptions.NotIntException;
+
 public class HelmugakoBagoia {
 	
 	
@@ -49,7 +51,7 @@ public class HelmugakoBagoia {
 			}
 			else if(botoia == 2)
 			{
-				pString = "Ongi etorri Helmugako Bagoiara!\n"
+				pString = "Ongi etorri Helmugako Bagoira!\n"
 						+ "Tren hau oso berezia da, izan ere, norberak erabakitzen du zein trenbidetatik joan. Bidai luze honetan zehar hainbat alditan erabaki "
 						+ "\nbeharko duzu zein trenbidetik joango zaren eta zortea izanez gero, dirua lortuko duzu, partida irabaztea ahalbidetuko dizuna."
 						+ "\nBAINA KONTUZ!! Trenbide zati batzuk apurtuta daude eta ezin izango zara trenbide horretatik pasatu."
@@ -97,6 +99,7 @@ public class HelmugakoBagoia {
 		pString = "\nAukeratu zenbat bot nahi dituzun: ";
 		in.idazketaAnimazioa(pString);
 		botKop = t.aukeratuInt();
+	
 		
 		txandaMax = ((botKop + joKop)*2 + biaKop * 3)/2;
 		System.out.println();
@@ -118,7 +121,8 @@ public class HelmugakoBagoia {
 		}
 	
 		System.out.println("Hurrengo partidak " + txandaMax + " txanda izango ditu.\n");
-		int irabazlerik = this.jokatu(biaKop, txandaMax);
+		TrenbideZerrenda tz = TrenbideZerrenda.getTrenbideZerrenda(txandaMax, biaKop); 
+		int irabazlerik = this.jokatu(biaKop, txandaMax, tz);
 	
 		if (irabazlerik == 0)
 		{
@@ -126,19 +130,22 @@ public class HelmugakoBagoia {
 		}
 		in.idazketaAnimazioa("\nBeste partida bat hasi nahi duzu?");
 		t.getReturn();
+		bz.backMusicItzali();
 		String eran = t.getString("\nBai edo ez idatzi: ");
 		if(eran.equalsIgnoreCase("bai")) {
 			jz.resetZerrenda();
+			tz.resetTrenbideZerrenda();
 			this.partidaHasi();
 		}
-		in.idazketaAnimazioa("Ados! Hurrengo baterarte!");
-		bz.backMusicItzali();
+		else {
+			in.idazketaAnimazioa("Ados! Hurrengo baterarte!");
+			bz.backMusicItzali();
+		}
 	}
 	
-	private int jokatu(int pBiaKop, int pTxandaMax) 
+	private int jokatu(int pBiaKop, int pTxandaMax, TrenbideZerrenda tz) 
 	{
 		JokalariZerrenda jz = JokalariZerrenda.getJokalariZerrenda();
-		TrenbideZerrenda tz = TrenbideZerrenda.getTrenbideZerrenda(pTxandaMax, pBiaKop); 
 		TrenbideBat tb = null;
 		TrenbideAsko ta = null;
 		int txanda = 1;
@@ -165,7 +172,7 @@ public class HelmugakoBagoia {
 			tb.inprimatuZatia();
 			ta = (TrenbideAsko) tz.zatiaLortu(txanda * 2);
 			
-			jz.jokalariakJokatu(ta, pBiaKop, txanda);
+			jz.jokalariakJokatu(ta, pBiaKop);
 			System.out.println();
 			
 			ta.inprimatuZatia(pBiaKop, ta.oztopoaDago(), ta.txanponaDago(), ta.getZatia(txanda * 2)instanceof Lapurra);

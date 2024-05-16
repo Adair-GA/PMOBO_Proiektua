@@ -2,6 +2,9 @@ package packproiektua;
 
 import java.util.Scanner;
 
+import packexceptions.NotInRangeException;
+import packexceptions.NotIntException;
+
 public class Teklatua {
 	
 	private static Teklatua nireTeklatua = new Teklatua();
@@ -33,31 +36,24 @@ public class Teklatua {
 		return scanner.nextLine();
 	}
 	
-	public int aukeratuBidea(int pBideMax)
+	public int aukeratuBidea(int pBideMax) throws NotIntException, NotInRangeException
 	{
-		while(!scanner.hasNextInt())
+		if(!scanner.hasNextInt())
 		{
 			scanner.next();
-			System.out.println("Sartu zenbaki bat mesedez: \n");
+			throw new NotIntException();
 		}
 		int bidea = scanner.nextInt();
-		while(bidea < 1 || bidea > pBideMax)
+		if(bidea < 1 || bidea > pBideMax)
 		{
-			System.out.println("Ez da existitzen aukeratu duzun bidea, mesedez beste zenbaki bat sartu: \n");
-			while(!scanner.hasNextInt())
-			{
-				scanner.next();
-				System.out.println("Sartu zenbaki bat mesedez: \n");
-			}
-			bidea = scanner.nextInt();
-			
+			throw new NotInRangeException();
 		}
 		return bidea;
 	}
 	
 	public int aukeratuInt()
 	{
-		while(!scanner.hasNextInt())
+		if(!scanner.hasNextInt())
 		{
 			scanner.next();
 			System.out.println("Sartu zenbaki bat mesedez: \n");
