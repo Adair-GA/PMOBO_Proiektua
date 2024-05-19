@@ -1,5 +1,6 @@
 package packproiektua;
 
+
 import javax.sound.sampled.*;
 
 public class Bozgorailua {
@@ -11,7 +12,7 @@ public class Bozgorailua {
 	{
 		try
 		{
-			String filePath = File.separator+"sounds"+File.separator+"backgroundMusic.wav";
+			String filePath = "/sounds//backgroundMusic.wav";
 			clip = AudioSystem.getClip();
 			
 			AudioInputStream inputStream = AudioSystem.getAudioInputStream(getClass().getResource(filePath));
