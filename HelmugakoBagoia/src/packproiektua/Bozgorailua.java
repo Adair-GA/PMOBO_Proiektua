@@ -11,7 +11,7 @@ public class Bozgorailua {
 	{
 		try
 		{
-			String filePath = "/sounds/backgroundMusic.wav";
+			String filePath = File.separator+"sounds"+File.separator+"backgroundMusic.wav";
 			clip = AudioSystem.getClip();
 			
 			AudioInputStream inputStream = AudioSystem.getAudioInputStream(getClass().getResource(filePath));
