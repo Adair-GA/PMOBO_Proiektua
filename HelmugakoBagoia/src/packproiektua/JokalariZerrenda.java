@@ -6,7 +6,7 @@ import java.util.Iterator;
 
 public class JokalariZerrenda {
 	
-	private ArrayList<Jokalaria>lista;
+	private ArrayList<Jokalaria> lista;
 	private static JokalariZerrenda nireJokalariZerrenda = null;
 	
 	private JokalariZerrenda()
@@ -98,22 +98,10 @@ public class JokalariZerrenda {
 	
 	public void norDaDirudunena()
 	{
-		Iterator<Jokalaria>itr;
-		Jokalaria irabazlea = null, jk = null;
-		int txanponMax = 0, txanponak;
-		
-		itr = getIteradorea();
-		while (itr.hasNext())
-		{
-			jk = itr.next();
-			txanponak = jk.getTxanponak();
-			if (txanponak > txanponMax)
-			{
-				txanponMax = txanponak;
-				irabazlea = jk;
-			}
-		}
-		System.out.println("Irabazlea "+ irabazlea.getIzena() +" da.");
+
+		Jokalaria irabazle = lista.stream().max(Jokalaria::compareTo).orElseThrow();
+
+		System.out.println("Irabazlea "+ irabazle.getIzena() +" da.");
 	}
 	
 	public void jokalariakJokatu(TrenbideAsko pTa, int pZatiKop)

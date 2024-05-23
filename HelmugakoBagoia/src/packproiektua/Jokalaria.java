@@ -3,7 +3,7 @@ package packproiektua;
 import packexceptions.NotInRangeException;
 import packexceptions.NotIntException;
 
-public class Jokalaria {
+public class Jokalaria implements Comparable{
 	
 	//atributuak
 	private String izena;
@@ -78,5 +78,11 @@ public class Jokalaria {
 	public void setGaldu(boolean pB) {
 		this.galdu = pB;
 		
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		Jokalaria other = (Jokalaria) o;
+		return Integer.compare(this.txanponak, other.txanponak);
 	}
 }
